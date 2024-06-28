@@ -1,0 +1,44 @@
+{
+    "login": {
+        "user": "Username",
+        "password": "Password",
+        "login": "Log In",
+        "error": "Invalid login"
+    },
+    "home": {
+        
+    },
+    
+    "profile": {
+        "title": "My Profile",
+        "dialogs": {
+            "close-session": {
+                "header": "Logout",
+                "message": "Do you want to log out?"
+            }
+        }
+    },
+    
+    "users": {
+        "title": "Users",
+        "name": "Name",
+        "lastname": "Lastname",
+        "username": "Username",
+        "password": "Password",
+        "email": "Email",
+        "sex": "Sex",
+        "role": "Role",
+        "usertype": "User Type",
+        "add": "Enter the data for the new user"
+    },
+    
+    "error": {
+        "error":"Error",
+        "empty": "Field cannot be empty",
+        "email": "The data entered is not an email",
+        "ci": "ID number is incorrect",
+        "ci_date": "Date is incorrect",
+        "existent_ci": "This ID number already exists",
+        "existent_username": "This username already exists"
+    }
+}

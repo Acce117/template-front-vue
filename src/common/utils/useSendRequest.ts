@@ -1,14 +1,13 @@
-import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig, type AxiosResponse } from "axios";
+import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig } from "axios";
 import { ref, type Ref } from "vue";
-import tokenHandler from "./token-handler";
 
 interface RequestOptions {
-    url: string
     method?: 'GET' | 'POST' | 'DELETE' | 'PATCH',
     data?: Object,
-    immediate?: boolean,
+    auth_token?: string,
+    lazy?: boolean,
+    cb?: (response?: Ref<any>, error?: Ref<AxiosError | null>)=>{}
 }
-
 export interface UseSendRequestResult {
     response: Ref<any>,
     error: Ref<AxiosError | null>,
@@ -16,22 +15,26 @@ export interface UseSendRequestResult {
     sendRequest?: CallableFunction
 }
 
-export function useSendRequest(requestOptions: RequestOptions, cb = (response?: Ref<any>, error?: Ref<AxiosError | null>) => { }): UseSendRequestResult {
+export function useSendRequest(
+        url: string,
+        requestOptions: RequestOptions,
+    ): UseSendRequestResult {
+
     let response = ref();
     let loading = ref<boolean>(false);
     let error = ref<AxiosError | null>(null);
 
     function sendRequest() {
 
-        const config: AxiosRequestConfig = {
-            headers: new AxiosHeaders(),
-            method: requestOptions.method || 'GET',
-            url: `${import.meta.env.VITE_API_PATH}/${requestOptions.url}`,
-        }
+        const headers = new AxiosHeaders();
 
-        const token = tokenHandler.getToken();
-        if (token) {
-            if (config.headers) config.headers.Authorization = `Bearer ${token}`;
+        if (requestOptions.auth_token)
+            headers.Authorization = `Bearer ${requestOptions.auth_token}`;
+
+        const config: AxiosRequestConfig = {
+            headers,
+            method: requestOptions.method || 'GET',
+            url: `${import.meta.env.VITE_API_PATH}/${url}`,
         }
 
         if (requestOptions.data)
@@ -49,11 +52,10 @@ export function useSendRequest(requestOptions: RequestOptions, cb = (response?: 
             })
             .finally(async () => {
                 loading.value = false;
-                cb();
+                if(requestOptions.cb) requestOptions.cb();
             });
 
         loading.value = true;
-
     }
 
     const result: UseSendRequestResult = {
@@ -62,9 +64,7 @@ export function useSendRequest(requestOptions: RequestOptions, cb = (response?: 
         loading
     };
 
-    if (requestOptions.immediate || requestOptions.immediate === undefined)
-        sendRequest();
-    else
-        result.sendRequest = sendRequest;
+    !requestOptions.lazy ? sendRequest() : result.sendRequest = sendRequest;
+
     return result;
 }

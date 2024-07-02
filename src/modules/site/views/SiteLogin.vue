@@ -13,7 +13,7 @@ const {
     <form action="" @submit.prevent="sendRequest()">
         <label for="">
             {{ $t('login.user') }}
-            <input type="text" v-model="credentials.user_name">
+            <input type="text" v-model="credentials.username">
         </label>
         <label for="">
             {{ $t('login.password') }}

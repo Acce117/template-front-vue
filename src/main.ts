@@ -9,5 +9,4 @@ const app = createApp(App)
 
 app.use(router)
 app.use(i18n);
-app.use(createPinia())
-app.mount('#app')
+app.use(createPinia()).mount('#app')

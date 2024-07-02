@@ -6,7 +6,7 @@ interface RequestOptions {
     data?: Object,
     auth_token?: string,
     lazy?: boolean,
-    cb?: (response?: Ref<any>, error?: Ref<AxiosError | null>)=>{}
+    cb?: (response?: Ref<any>, error?: Ref<AxiosError | null>)=>void
 }
 export interface UseSendRequestResult {
     response: Ref<any>,
@@ -30,7 +30,7 @@ export function useSendRequest(
 
         if (requestOptions.auth_token)
             headers.Authorization = `Bearer ${requestOptions.auth_token}`;
-
+        
         const config: AxiosRequestConfig = {
             headers,
             method: requestOptions.method || 'GET',
@@ -52,7 +52,7 @@ export function useSendRequest(
             })
             .finally(async () => {
                 loading.value = false;
-                if(requestOptions.cb) requestOptions.cb();
+                if(requestOptions.cb) requestOptions.cb(response, error);
             });
 
         loading.value = true;

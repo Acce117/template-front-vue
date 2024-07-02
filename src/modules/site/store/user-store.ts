@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 export interface UserInterface {
-    ci: string | null,
+    id: number | string | null
     name: string | null,
     username: string | null,
     role: [],
@@ -11,7 +11,7 @@ export const userStore = defineStore('user', {
     state: (): UserInterface => {
 
         const state: UserInterface = {
-            ci: null,
+            id: null,
             name: null,
             username: null,
             role: [],

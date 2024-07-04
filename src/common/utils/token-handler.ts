@@ -1,36 +1,47 @@
 const storage = sessionStorage;
 
-function getToken (){
-    return storage.getItem('token');
-}
+export default class TokenHandler {
 
-function storeToken (token: string){
-    storage.setItem('token', token);
-}
+    /**
+     * Retrieves the token from storage
+     * @return token
+     */
+    static getToken() {
+        return storage.getItem('token');
+    }
 
-function getRefreshToken () {
-    return localStorage.getItem('refreshToken');
-}
+    /**
+     * @param token - token to be stored in storage
+     */
+    static storeToken(token: string) {
+        storage.setItem('token', token);
+    }
 
-function storeRefreshToken (refreshToken: string){
-    localStorage.setItem('refreshToken', refreshToken);
-}
+    /**
+     * Retrieves the token used to refresh the actual token from storage
+     */
+    static getRefreshToken() {
+        return localStorage.getItem('refreshToken');
+    }
 
-function removeToken (){
-    storage.removeItem('token');
-}
+    /**
+     * @param refreshToken - refresh token to be stored
+     */
+    static storeRefreshToken(refreshToken: string) {
+        localStorage.setItem('refreshToken', refreshToken);
+    }
 
-function removeRefreshToken() {
-    localStorage.removeItem('refreshToken');
-}
+    /**
+     * removes token from storage
+     */
+    static removeToken() {
+        storage.removeItem('token');
+    }
 
-const tokenHandler = {
-    getToken,
-    storeToken,
-    getRefreshToken,
-    storeRefreshToken,
-    removeRefreshToken,
-    removeToken
+    /**
+     * removes refresh token from storage
+     */
+    static removeRefreshToken() {
+        localStorage.removeItem('refreshToken');
+    }
 }
-
-export default tokenHandler;

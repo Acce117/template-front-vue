@@ -2,7 +2,7 @@
 import 'vue-i18n';
 import {useLogin} from '../useLogin';
 
-const { 
+const {
     credentials,
     sendRequest
 } = useLogin();

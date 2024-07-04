@@ -1,9 +1,10 @@
 import { reactive, toValue, type Ref } from "vue";
-import { useSendRequest } from "@/common/utils/useSendRequest";
 import type { AxiosError } from "axios";
+import { useSendRequest } from "@/common/utils/useSendRequest";
+import TokenHandler from "@/common/utils/token-handler";
+import type { UserCredentials } from "@/modules/site/interfaces/userCredentials";
 import { userStore } from "./store/user-store";
-import tokenHandler from "@/common/utils/token-handler";
-import type {UserCredentials} from "@/modules/site/interfaces/userCredentials";
+
 const loginResHandler = (response?: Ref<any>, error?: Ref<AxiosError | null>) => {
     if (error?.value) {
         //handle error
@@ -11,7 +12,7 @@ const loginResHandler = (response?: Ref<any>, error?: Ref<AxiosError | null>) =>
     else {
         //handle response
         const user = userStore();
-        tokenHandler.storeToken(response?.value.token);
+        TokenHandler.storeToken(response?.value.token);
         user.$patch(response?.value.user);
     }
 }
@@ -37,6 +38,6 @@ export function useLogin() {
         loading,
         response,
         error,
-        sendRequest: sendRequest as CallableFunction
+        sendRequest: sendRequest as CallableFunction,
     }
 }

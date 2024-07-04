@@ -8,31 +8,33 @@
 
 3. A tool for storage management of token ```./src/common/utils/token-handler.ts```.
 
-4. Composable for events handlement in the project ```./src/common/utils/useEvents.ts```.
+4. Class for global events handle in the project ```./src/common/utils/GlobalEventManager.ts```.
 
 5. Abstract generic class to manage the crud requests ```./src/common/classes/Controller.ts```.
 
 ## Steps to start project
 1. Fork the repository 
 <br>
-https://github.com/Acce117/template-front-vue.
+https://github.com/Acce117/template-front-vue
 
 2. Install dependencies
-```sh
+```sh,
 npm install
 ```
-
+```sh,
+pnpm install
+```
 3. Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
-### Now just start developing your project
+4. Start developing your project
 
 ## Stack
 1. Vue3
 2. TypeScript
-3. I18n for internacionalization
-3. Vue-router
-4. Pinia for stores
-5. Axios
+3. I18n for internationalization
+4. Vue-router
+5. Pinia for stores
+6. Axios

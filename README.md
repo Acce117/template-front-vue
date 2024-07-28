@@ -13,9 +13,9 @@
 5. Abstract generic class to manage the crud requests ```./src/common/classes/Controller.ts```.
 
 ## Steps to start project
-1. Fork the repository 
+1. Create a repo based on the template. To know how to create a new repo based on a template in github go to the next link.
+https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
 <br>
-https://github.com/Acce117/template-front-vue
 
 2. Install dependencies
 ```sh,

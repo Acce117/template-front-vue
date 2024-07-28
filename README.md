@@ -4,7 +4,7 @@
 
 1. A basic login for authorization based in JWT and a logout functionality.
 
-2. A function for requests based in axios with the basic configuration ```./src/common/utils/useSendRequest.ts```.
+2. A function for requests based on axios with the basic configuration ```./src/common/utils/useSendRequest.ts```.
 
 3. A tool for storage management of token ```./src/common/utils/token-handler.ts```.
 

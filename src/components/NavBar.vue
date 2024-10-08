@@ -9,3 +9,9 @@
         <div></div>
     </nav>
 </template>
+
+<style scoped>
+nav {
+    padding: 0 20px;
+}
+</style>

@@ -2,8 +2,8 @@ import { reactive, toValue, type Ref } from "vue";
 import type { AxiosError } from "axios";
 import { useSendRequest } from "@/common/utils/useSendRequest";
 import TokenHandler from "@/common/utils/token-handler";
-import type { UserCredentials } from "@/modules/site/interfaces/userCredentials";
-import { userStore } from "./store/user-store";
+import type { UserCredentials } from "@/modules/security/interfaces/userCredentials";
+import { userStore } from "@/common/store/user-store";
 
 const loginResHandler = (response?: Ref<any>, error?: Ref<AxiosError | null>) => {
     if (error?.value) {
@@ -17,14 +17,14 @@ const loginResHandler = (response?: Ref<any>, error?: Ref<AxiosError | null>) =>
     }
 }
 
-export function useLogin() {
+export function useAuth(url: string) {
     const credentials = reactive<UserCredentials>({
         username: '',
         password: '',
     })
 
     const { loading, error, response, sendRequest } = useSendRequest(
-        'login', //Change if necessary
+        url,
         {
             method: 'POST',
             data: toValue(credentials),

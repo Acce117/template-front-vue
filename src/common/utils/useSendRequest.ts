@@ -67,7 +67,7 @@ export interface UseSendRequestResult {
  * @return UseSendRequestResult Object with reactive response, error and loading attributes
  * in case of @options.lazy == true, a sendRequest function is added
  */
-export function useSendRequest(
+export function useSendRequest<I>(
         url: string,
         options: RequestOptions,
     ): UseSendRequestResult {
@@ -93,7 +93,7 @@ export function useSendRequest(
                 config.params = options.data :
                 config.data = options.data;
 
-        axios(config)
+        axios<I>(config)
             .then(res => {
                 response.value = res.data
                 error.value = null
@@ -105,7 +105,7 @@ export function useSendRequest(
                 loading.value = false;
                 if(options.cb) options.cb(response, error);
             });
-
+        
         loading.value = true;
     }
 

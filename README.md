@@ -15,7 +15,6 @@
 ## Steps to start project
 1. Create a repo based on the template. To know how to create a new repo based on a template in github go to the next link.
 https://docs.github.com/es/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template
-<br>
 
 2. Install dependencies
 ```sh,

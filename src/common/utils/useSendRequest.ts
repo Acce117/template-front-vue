@@ -1,3 +1,4 @@
+import axiosIns from "@/plugins/axios";
 import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig } from "axios";
 import { ref, type Ref } from "vue";
 
@@ -8,7 +9,7 @@ interface RequestOptions {
     /**
      * Method of the request
      */
-    method?: 'GET' | 'POST' | 'DELETE' | 'PATCH',
+    method?: 'GET' | 'POST' | 'DELETE' | 'PATCH' | 'PUT',
     /**
      * Data to be sent in the request
      */
@@ -29,7 +30,7 @@ interface RequestOptions {
      * @param response reactive response object
      * @param error reactive response error
      */
-    cb?: (response?: Ref<any>, error?: Ref<AxiosError | null>)=>void
+    cb?: (response: Ref<any>, error: Ref<AxiosError | null>)=>void
 }
 
 export interface UseSendRequestResult {
@@ -79,8 +80,8 @@ export function useSendRequest<I>(
     function sendRequest() {
         const headers = new AxiosHeaders();
 
-        if (options.auth_token)
-            headers.Authorization = `Bearer ${options.auth_token}`;
+        // if (options.auth_token)
+        //     headers.Authorization = `Bearer ${options.auth_token}`;
         
         const config: AxiosRequestConfig = {
             headers,
@@ -93,7 +94,7 @@ export function useSendRequest<I>(
                 config.params = options.data :
                 config.data = options.data;
 
-        axios<I>(config)
+        axiosIns<I>(config)
             .then(res => {
                 response.value = res.data
                 error.value = null

@@ -5,15 +5,17 @@ import TokenHandler from "@/common/utils/token-handler";
 import type { UserCredentials } from "@/modules/security/interfaces/userCredentials";
 import { userStore } from "@/common/store/user-store";
 
-const loginResHandler = (response?: Ref<any>, error?: Ref<AxiosError | null>) => {
-    if (error?.value) {
-        //handle error
+const loginResHandler = (response: Ref<any>, error: Ref<AxiosError | null>) => {
+    if (error.value) {
+        //TODO handle error
     }
     else {
-        //handle response
+        //TODO handle response
+
+        //default handle
         const user = userStore();
-        TokenHandler.storeToken(response?.value.token);
-        user.$patch(response?.value.user);
+        TokenHandler.storeToken(response.value.token);
+        user.$patch(response.value.user);
     }
 }
 

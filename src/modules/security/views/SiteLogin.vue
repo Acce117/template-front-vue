@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import 'vue-i18n';
-import { useAuth } from '../useLogin';
+import { useAuth } from '../controllers/useLogin';
 import InputText from 'primevue/inputtext';
 import FloatLabel from 'primevue/floatlabel';
 

@@ -1,5 +1,5 @@
 import axiosIns from "@/plugins/axios";
-import axios, { AxiosError, AxiosHeaders, type AxiosRequestConfig } from "axios";
+import { AxiosError, AxiosHeaders, type AxiosRequestConfig } from "axios";
 import { ref, type Ref } from "vue";
 
 /**
@@ -33,7 +33,7 @@ interface RequestOptions {
     cb?: (response: Ref<any>, error: Ref<AxiosError | null>)=>void
 }
 
-export interface UseSendRequestResult {
+export interface SendRequestTools {
     /**
      * Reactive response object, it gets the response value if the
      * request is successfully
@@ -56,7 +56,7 @@ export interface UseSendRequestResult {
      * @function sendRequest - function to manage when to do the request if
      * @RequestOptions.lazy == true
      */
-    sendRequest?: CallableFunction
+    sendRequest: CallableFunction
 }
 
 /**
@@ -71,7 +71,7 @@ export interface UseSendRequestResult {
 export function useSendRequest<I>(
         url: string,
         options: RequestOptions,
-    ): UseSendRequestResult {
+    ): SendRequestTools {
 
     let response = ref();
     let loading = ref<boolean>(false);
@@ -86,7 +86,7 @@ export function useSendRequest<I>(
         const config: AxiosRequestConfig = {
             headers,
             method: options.method || 'GET',
-            url: `${import.meta.env.VITE_API_PATH}/${url}`,
+            url,
         }
 
         if (options.data)
@@ -110,13 +110,14 @@ export function useSendRequest<I>(
         loading.value = true;
     }
 
-    const result: UseSendRequestResult = {
+    const result: SendRequestTools = {
         response,
         error,
-        loading
+        loading,
+        sendRequest: sendRequest
     };
 
-    !options.lazy ? sendRequest() : result.sendRequest = sendRequest;
+    if (!options.lazy) sendRequest();
 
     return result;
 }

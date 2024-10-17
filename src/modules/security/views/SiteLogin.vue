@@ -17,7 +17,6 @@ import Button from 'primevue/button';
             <InputText id="in_password" type="password" v-model="authController.credentials.password"></InputText>
             <label for="in_password">{{ $t('login.password') }}</label>
         </FloatLabel>
-        <h1>{{ authController.sendRequestTools.loading }}</h1>
         <Button type="submit">{{ $t('login.login') }}</Button>
     </form>
 </template>

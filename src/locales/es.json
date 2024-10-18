@@ -22,8 +22,16 @@
             }
         }
     },
+
+    
+    "management": {
+        "users": {
+            "title": "Usuarios",
+            "create": "Nuevo Usuario"
+        }
+    },
+
     "users": {
-        "title": "Usuarios",
         "name": "Nombres",
         "lastname": "Apellidos",
         "username": "Nombre de Usuario",

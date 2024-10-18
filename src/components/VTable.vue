@@ -3,7 +3,6 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 
 const props = defineProps({
-    dataKey: String,
     columns: {
         required: true,
         type: Array<any>
@@ -14,7 +13,7 @@ const props = defineProps({
 
 <template>
     <div class="card">
-        <DataTable :value="null" stripedRows style="min-width: 75rem;" :dataKey="props.dataKey">
+        <DataTable stripedRows style="min-width: 75rem;" v-bind="{ ...$attrs, ...props}">
             <Column v-for="column of props.columns" :field="column.field" :header="column.header"></Column>
         </DataTable>
     </div>

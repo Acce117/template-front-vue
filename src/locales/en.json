@@ -26,8 +26,14 @@
         }
     },
     
+    "management": {
+        "users": {
+            "title": "Users",
+            "create": "New user"
+        }
+    },
+
     "users": {
-        "title": "Users",
         "name": "Name",
         "lastname": "Lastname",
         "username": "Username",

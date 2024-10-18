@@ -1,9 +1,16 @@
 {
-    "login": {
+    "auth": {
         "user": "Username",
         "password": "Password",
-        "login": "Log In",
-        "error": "Invalid login"
+        "login": {
+            "login": "Log In",
+            "error": "Invalid login",
+            "not_account": "Don't have an account?"
+        },
+        "register": {
+            "register": "Sign Up",
+            "account": "Already have an account?"
+        }
     },
     "home": {
         

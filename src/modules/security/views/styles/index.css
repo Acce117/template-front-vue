@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    margin-bottom: 13px;
+}
+.auth_input {
+    margin-bottom: 27px;
+}
+
+input {
+    width: 17rem;
+}

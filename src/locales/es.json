@@ -1,13 +1,18 @@
 {
-    "login": {
+    "auth": {
         "user": "Usuario",
         "password": "Contraseña",
-        "login": "Iniciar Sesión",
-        "error": "Inicio de sesión inválido"
+        "login": {
+            "login": "Iniciar Sesión",
+            "error": "Inicio de sesión inválido",
+            "not_account": "¿No tiene una cuenta?"
+        },
+        "register": {
+            "register": "Registrarse",
+            "account": "¿Ya tiene una cuenta?"
+        }
     },
-    "home": {
-        
-    },
+    "home": {},
     "profile": {
         "title": "Mi perfil",
         "dialogs": {
@@ -17,7 +22,6 @@
             }
         }
     },
-    
     "users": {
         "title": "Usuarios",
         "name": "Nombres",
@@ -28,13 +32,12 @@
         "sex": "Sexo",
         "role": "Rol",
         "usertype": "Tipo de Usuario",
-        "add":"Inserte los datos del nuevo usuario"         
+        "add": "Inserte los datos del nuevo usuario"
     },
-    
     "error": {
-        "error":"Error",
+        "error": "Error",
         "empty": "El campo no puede estar vacío",
         "email": "El dato introducido no es un correo",
-        "existent_username":"Este nombre de usuario ya existe"
+        "existent_username": "Este nombre de usuario ya existe"
     }
 }

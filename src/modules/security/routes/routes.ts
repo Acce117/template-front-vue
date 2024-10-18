@@ -1,5 +1,6 @@
 import type { RouteRecordRaw } from "vue-router";
 import SiteLogin from "../views/SiteLogin.vue";
+import SiteRegister from "../views/SiteRegister.vue";
 
 export function defineAuthRoutes(basePath: string = ''): RouteRecordRaw[] {
     return [
@@ -10,7 +11,7 @@ export function defineAuthRoutes(basePath: string = ''): RouteRecordRaw[] {
         },
         {
             path: `${basePath}/register`,
-            component: SiteLogin,
+            component: SiteRegister,
             name: 'register'
         }
     ];

@@ -5,7 +5,7 @@ import TokenHandler from "@/common/utils/token-handler";
 import type { UserCredentials } from "@/modules/security/interfaces/userCredentials";
 import { userStore } from "@/common/store/user-store";
 
-class AuthController {
+export class AuthController {
     credentials: UserCredentials;
     sendRequestTools: SendRequestTools;
 
@@ -42,4 +42,5 @@ class AuthController {
 }
 
 //change url if necessary
-export const authController = new AuthController('login');
+export const loginController = new AuthController('login');
+export const registerController = new AuthController('register');

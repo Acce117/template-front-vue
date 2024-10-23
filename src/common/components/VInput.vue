@@ -4,9 +4,7 @@ import InputText from 'primevue/inputtext';
 import { ErrorMessage, Field } from 'vee-validate';
 
 const props = defineProps({
-    label: {
-        type: String
-    },
+    label: String,
     name: {
         type: String,
         required: true,

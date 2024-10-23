@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import 'vue-i18n';
-import { registerController } from '../controllers/authController';
+import { useI18n } from 'vue-i18n';
 import Button from 'primevue/button';
-import VInput from '@/common/components/VInput.vue';
 import { Form } from 'vee-validate';
+import VInput from '@/common/components/VInput.vue';
+import { registerController } from '../controllers/authController';
 import { userSchema } from '../schemas/user.schema';
 
 defineExpose({
-    header: 'Register'
+    header: useI18n().t('auth.register.header')
 })
 </script>
 

@@ -3,11 +3,13 @@
         "user": "Usuario",
         "password": "Contraseña",
         "login": {
+            "header": "Iniciar Sesión",
             "login": "Iniciar Sesión",
             "error": "Inicio de sesión inválido",
             "not_account": "¿No tiene una cuenta?"
         },
         "register": {
+            "header": "Registrarse",
             "register": "Registrarse",
             "account": "¿Ya tiene una cuenta?"
         }

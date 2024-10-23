@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import 'vue-i18n';
-import { loginController } from '../controllers/authController';
+import { useI18n } from 'vue-i18n';
 import Button from 'primevue/button';
+import { Form } from 'vee-validate';
 import VInput from '@/common/components/VInput.vue';
+import { loginController } from '../controllers/authController';
 import { userSchema } from '../schemas/user.schema';
-import { ErrorMessage, Form } from 'vee-validate';
 
 defineExpose({
-    header: 'Login'
+    header: useI18n().t('auth.login.header')
 })
 </script>
 
@@ -18,7 +19,6 @@ defineExpose({
         
         <RouterLink :to="'/register'">{{ $t('auth.login.not_account') }}</RouterLink>
         <Button type="submit">{{ $t('auth.login.login') }}</Button>
-
     </Form>
 </template>
 

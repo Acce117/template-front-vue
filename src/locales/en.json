@@ -3,11 +3,13 @@
         "user": "Username",
         "password": "Password",
         "login": {
+            "header": "Login",
             "login": "Log In",
             "error": "Invalid login",
             "not_account": "Don't have an account?"
         },
         "register": {
+            "header": "Register",
             "register": "Sign Up",
             "account": "Already have an account?"
         }

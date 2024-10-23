@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import 'vue-i18n';
 import { loginController } from '../controllers/authController';
-import InputText from 'primevue/inputtext';
-import FloatLabel from 'primevue/floatlabel';
 import Button from 'primevue/button';
+import VInput from '@/common/components/VInput.vue';
 
 defineExpose({
     header: 'Login'
@@ -12,14 +11,9 @@ defineExpose({
 
 <template>
     <form action="" @submit.prevent="loginController.sendRequestTools.sendRequest()">
-        <FloatLabel variant="on" class="auth_input">
-            <InputText id="in_username" v-model="loginController.credentials.username"></InputText>
-            <label for="in_username">{{ $t('auth.user') }}</label>
-        </FloatLabel>
-        <FloatLabel variant="on" class="auth_input">
-            <InputText id="in_password" type="password" v-model="loginController.credentials.password"></InputText>
-            <label for="in_password">{{ $t('auth.password') }}</label>
-        </FloatLabel>
+        <VInput v-model="loginController.credentials.username" :label="$t('auth.user')" class="auth_input"></VInput>
+        <VInput type="password" v-model="loginController.credentials.password" :label="$t('auth.password')" class="auth_input"></VInput>
+        
         <RouterLink :to="'/register'">{{ $t('auth.login.not_account') }}</RouterLink>
         <Button type="submit">{{ $t('auth.login.login') }}</Button>
     </form>

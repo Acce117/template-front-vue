@@ -23,6 +23,9 @@ importers:
       primevue:
         specifier: ^4.1.0
         version: 4.1.0(vue@3.5.11(typescript@5.3.3))
+      vee-validate:
+        specifier: ^4.14.4
+        version: 4.14.4(vue@3.5.11(typescript@5.3.3))
       vue:
         specifier: ^3.4.15
         version: 3.5.11(typescript@5.3.3)
@@ -32,6 +35,9 @@ importers:
       vue-router:
         specifier: ^4.2.5
         version: 4.4.5(vue@3.5.11(typescript@5.3.3))
+      yup:
+        specifier: ^1.4.0
+        version: 1.4.0
     devDependencies:
       '@intlify/unplugin-vue-i18n':
         specifier: ^1.5.0
@@ -594,6 +600,9 @@ packages:
   '@vue/devtools-api@6.6.4':
     resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==, tarball: https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.6.4.tgz}
 
+  '@vue/devtools-api@7.5.3':
+    resolution: {integrity: sha512-nwz45qBxHOUdZzaYP9V3E1aFOgPpoMmNlBcGn0dsUxizlws4wJ4V6P6849yt28p5NSQ/2E3V87JXFAuk3N9Inw==, tarball: https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-7.5.3.tgz}
+
   '@vue/devtools-core@7.4.6':
     resolution: {integrity: sha512-7ATNPEbVqThOOAp2bg/YUIm9MqqgimbSk24D05hdXUp89JlXX12aTzdrWd9xZRwS78hDR+wCToHl1C/8sopBrg==, tarball: https://registry.npmjs.org/@vue/devtools-core/-/devtools-core-7.4.6.tgz}
     peerDependencies:
@@ -602,8 +611,14 @@ packages:
   '@vue/devtools-kit@7.4.6':
     resolution: {integrity: sha512-NbYBwPWgEic1AOd9bWExz9weBzFdjiIfov0yRn4DrRfR+EQJCI9dn4I0XS7IxYGdkmUJi8mFW42LLk18WsGqew==, tarball: https://registry.npmjs.org/@vue/devtools-kit/-/devtools-kit-7.4.6.tgz}
 
+  '@vue/devtools-kit@7.5.3':
+    resolution: {integrity: sha512-XSTXCAHshYniK3gLQfhMRDuDLLj6vHFWKVl1tvtSgZ0iJy5AXoI4U/GKGlyS2uS1hwZCSoNSGdkKtbW/pn/Iuw==, tarball: https://registry.npmjs.org/@vue/devtools-kit/-/devtools-kit-7.5.3.tgz}
+
   '@vue/devtools-shared@7.4.6':
     resolution: {integrity: sha512-rPeSBzElnHYMB05Cc056BQiJpgocQjY8XVulgni+O9a9Gr9tNXgPteSzFFD+fT/iWMxNuUgGKs9CuW5DZewfIg==, tarball: https://registry.npmjs.org/@vue/devtools-shared/-/devtools-shared-7.4.6.tgz}
+
+  '@vue/devtools-shared@7.5.3':
+    resolution: {integrity: sha512-i2tCUtAEQ0S8AmTuy6FSOmVKCB5ajmMaVrrw0ypX75koLSo1mssQ8zezds5IoUZHRiXBsgoGHbJGuGwyrSGhqQ==, tarball: https://registry.npmjs.org/@vue/devtools-shared/-/devtools-shared-7.5.3.tgz}
 
   '@vue/language-core@1.8.27':
     resolution: {integrity: sha512-L8Kc27VdQserNaCUNiSFdDl9LWT24ly8Hpwf1ECy3aFb9m6bDhBGQYOujDm21N7EW3moKIOKEanQwe1q5BK+mA==, tarball: https://registry.npmjs.org/@vue/language-core/-/language-core-1.8.27.tgz}
@@ -668,6 +683,9 @@ packages:
 
   birpc@0.2.17:
     resolution: {integrity: sha512-+hkTxhot+dWsLpp3gia5AkVHIsKlZybNT5gIYiDlNzJrmYPcTM9k5/w2uaj3IPpd7LlEYpmCj4Jj1nC41VhDFg==, tarball: https://registry.npmjs.org/birpc/-/birpc-0.2.17.tgz}
+
+  birpc@0.2.19:
+    resolution: {integrity: sha512-5WeXXAvTmitV1RqJFppT5QtUiz2p1mRSYU000Jkft5ZUCLJIk4uQriYNO50HknxKwM6jd8utNc66K1qGIwwWBQ==, tarball: https://registry.npmjs.org/birpc/-/birpc-0.2.19.tgz}
 
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==, tarball: https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz}
@@ -1097,6 +1115,9 @@ packages:
     resolution: {integrity: sha512-iR/RysaTnZeIG3UVxdhazU7MA8nEODOpHk8WSINwYU0WMsA/ZghbchHOD5a/LYuLuZa3V03j7mX4LMKroeV+ag==, tarball: https://registry.npmjs.org/primevue/-/primevue-4.1.0.tgz}
     engines: {node: '>=12.11.0'}
 
+  property-expr@2.0.6:
+    resolution: {integrity: sha512-SVtmxhRE/CGkn3eZY1T6pC8Nln6Fr/lu1mKSgRud0eC73whjGfoAogbn78LkD8aFL0zz3bAFerKSnOl7NlErBA==, tarball: https://registry.npmjs.org/property-expr/-/property-expr-2.0.6.tgz}
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==, tarball: https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz}
 
@@ -1181,6 +1202,9 @@ packages:
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==, tarball: https://registry.npmjs.org/svg-tags/-/svg-tags-1.0.0.tgz}
 
+  tiny-case@1.0.3:
+    resolution: {integrity: sha512-Eet/eeMhkO6TX8mnUteS9zgPbUMQa4I6Kkp5ORiBD5476/m+PIRiumP5tmh5ioJpH7k51Kehawy2UDfsnxxY8Q==, tarball: https://registry.npmjs.org/tiny-case/-/tiny-case-1.0.3.tgz}
+
   to-fast-properties@2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==, tarball: https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz}
     engines: {node: '>=4'}
@@ -1189,9 +1213,20 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==, tarball: https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz}
     engines: {node: '>=8.0'}
 
+  toposort@2.0.2:
+    resolution: {integrity: sha512-0a5EOkAUp8D4moMi2W8ZF8jcga7BgZd91O/yabJCFY8az+XSzeGyTKs0Aoo897iV1Nj6guFq8orWDS96z91oGg==, tarball: https://registry.npmjs.org/toposort/-/toposort-2.0.2.tgz}
+
   totalist@3.0.1:
     resolution: {integrity: sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==, tarball: https://registry.npmjs.org/totalist/-/totalist-3.0.1.tgz}
     engines: {node: '>=6'}
+
+  type-fest@2.19.0:
+    resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==, tarball: https://registry.npmjs.org/type-fest/-/type-fest-2.19.0.tgz}
+    engines: {node: '>=12.20'}
+
+  type-fest@4.26.1:
+    resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==, tarball: https://registry.npmjs.org/type-fest/-/type-fest-4.26.1.tgz}
+    engines: {node: '>=16'}
 
   typescript@5.3.3:
     resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==, tarball: https://registry.npmjs.org/typescript/-/typescript-5.3.3.tgz}
@@ -1222,6 +1257,11 @@ packages:
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
+
+  vee-validate@4.14.4:
+    resolution: {integrity: sha512-Eg1FK2IqxqmujjN8Oehvqfx+QynyrIVc6Su2h/HQI/m3VEyUXW4wlB0h0sLkNizsEWlTj7Kwxn5Q2UWCr7RTQg==, tarball: https://registry.npmjs.org/vee-validate/-/vee-validate-4.14.4.tgz}
+    peerDependencies:
+      vue: ^3.4.26
 
   vite-hot-client@0.2.3:
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==, tarball: https://registry.npmjs.org/vite-hot-client/-/vite-hot-client-0.2.3.tgz}
@@ -1338,6 +1378,9 @@ packages:
     resolution: {integrity: sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q==, tarball: https://registry.npmjs.org/yaml/-/yaml-2.5.1.tgz}
     engines: {node: '>= 14'}
     hasBin: true
+
+  yup@1.4.0:
+    resolution: {integrity: sha512-wPbgkJRCqIf+OHyiTBQoJiP5PFuAXaWiJK6AmYkzQAh5/c2K9hzSApBZG5wV9KoKSePF7sAxmNSvh/13YHkFDg==, tarball: https://registry.npmjs.org/yup/-/yup-1.4.0.tgz}
 
 snapshots:
 
@@ -1866,6 +1909,10 @@ snapshots:
 
   '@vue/devtools-api@6.6.4': {}
 
+  '@vue/devtools-api@7.5.3':
+    dependencies:
+      '@vue/devtools-kit': 7.5.3
+
   '@vue/devtools-core@7.4.6(vite@5.4.8(@types/node@18.19.54))(vue@3.5.11(typescript@5.3.3))':
     dependencies:
       '@vue/devtools-kit': 7.4.6
@@ -1888,7 +1935,21 @@ snapshots:
       speakingurl: 14.0.1
       superjson: 2.2.1
 
+  '@vue/devtools-kit@7.5.3':
+    dependencies:
+      '@vue/devtools-shared': 7.5.3
+      birpc: 0.2.19
+      hookable: 5.5.3
+      mitt: 3.0.1
+      perfect-debounce: 1.0.0
+      speakingurl: 14.0.1
+      superjson: 2.2.1
+
   '@vue/devtools-shared@7.4.6':
+    dependencies:
+      rfdc: 1.4.1
+
+  '@vue/devtools-shared@7.5.3':
     dependencies:
       rfdc: 1.4.1
 
@@ -1963,6 +2024,8 @@ snapshots:
       file-uri-to-path: 1.0.0
 
   birpc@0.2.17: {}
+
+  birpc@0.2.19: {}
 
   brace-expansion@2.0.1:
     dependencies:
@@ -2351,6 +2414,8 @@ snapshots:
     transitivePeerDependencies:
       - vue
 
+  property-expr@2.0.6: {}
+
   proxy-from-env@1.1.0: {}
 
   queue-microtask@1.2.3: {}
@@ -2431,13 +2496,21 @@ snapshots:
 
   svg-tags@1.0.0: {}
 
+  tiny-case@1.0.3: {}
+
   to-fast-properties@2.0.0: {}
 
   to-regex-range@5.0.1:
     dependencies:
       is-number: 7.0.0
 
+  toposort@2.0.2: {}
+
   totalist@3.0.1: {}
+
+  type-fest@2.19.0: {}
+
+  type-fest@4.26.1: {}
 
   typescript@5.3.3: {}
 
@@ -2457,6 +2530,12 @@ snapshots:
       browserslist: 4.24.0
       escalade: 3.2.0
       picocolors: 1.1.0
+
+  vee-validate@4.14.4(vue@3.5.11(typescript@5.3.3)):
+    dependencies:
+      '@vue/devtools-api': 7.5.3
+      type-fest: 4.26.1
+      vue: 3.5.11(typescript@5.3.3)
 
   vite-hot-client@0.2.3(vite@5.4.8(@types/node@18.19.54)):
     dependencies:
@@ -2571,3 +2650,10 @@ snapshots:
       yaml: 2.5.1
 
   yaml@2.5.1: {}
+
+  yup@1.4.0:
+    dependencies:
+      property-expr: 2.0.6
+      tiny-case: 1.0.3
+      toposort: 2.0.2
+      type-fest: 2.19.0

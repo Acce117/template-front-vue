@@ -3,6 +3,8 @@ import 'vue-i18n';
 import { registerController } from '../controllers/authController';
 import Button from 'primevue/button';
 import VInput from '@/common/components/VInput.vue';
+import { Form } from 'vee-validate';
+import { userSchema } from '../schemas/user.schema';
 
 defineExpose({
     header: 'Register'
@@ -10,13 +12,13 @@ defineExpose({
 </script>
 
 <template>
-    <form action="" @submit.prevent="registerController.sendRequestTools.sendRequest()">
-        <VInput v-model="registerController.credentials.username" :label="$t('auth.user')" class="auth_input"></VInput>
-        <VInput type="password" v-model="registerController.credentials.password" :label="$t('auth.password')" class="auth_input"></VInput>
-        
+    <Form action="" @submit.prevent="registerController.sendRequestTools.sendRequest()" :validation-schema="userSchema">
+        <VInput v-model="registerController.credentials.username" :label="$t('auth.user')" class="auth_input" name="username"></VInput>
+        <VInput type="password" v-model="registerController.credentials.password" :label="$t('auth.password')" class="auth_input" name="password"></VInput>
+
         <RouterLink :to="'/login'">{{ $t('auth.register.account') }}</RouterLink>
         <Button type="submit">{{ $t('auth.register.register') }}</Button>
-    </form>
+    </Form>
 </template>
 
 <style scoped src="./styles/index.css"></style>

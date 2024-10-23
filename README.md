@@ -37,3 +37,4 @@ npm run dev
 4. Vue-router
 5. Pinia for stores
 6. Axios
+7. Vee-validate with Yup for form validation

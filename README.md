@@ -31,10 +31,12 @@ npm run dev
 4. Start developing your project
 
 ## Stack
-1. Vue3
-2. TypeScript
-3. I18n for internationalization
-4. Vue-router
-5. Pinia for stores
-6. Axios
-7. Vee-validate with Yup for form validation
+1. TypeScript - https://www.typescriptlang.org/
+2. Vue3 - https://vuejs.org
+3. PrimeVue - https://primevue.org/
+4. vue-I18n - https://vue-i18n.intlify.dev/
+5. Vue-router - https://router.vuejs.org/
+6. Pinia - https://pinia.vuejs.org/
+7. Axios - https://axios-http.com/
+8. Yup - https://yup-docs.vercel.app/
+9. Vee-validate - https://vee-validate.logaretm.com/v4/

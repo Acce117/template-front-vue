@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import VTable from '@/components/VTable.vue';
+import { ref, type VNodeRef } from 'vue';
 import Button from 'primevue/button';
-import userController from '../controller/UserController';
-import { ref } from 'vue';
-import CreateUser from './CreateUser.vue';
+import VTable from '@/components/VTable.vue';
 import VDialog from '@/components/VDialog.vue';
+import DeleteConfirmation from '@/components/confirm-messages/DeleteConfirmation.vue';
+import userController from '../controller/UserController';
+import CreateUser from './CreateUser.vue';
+
+const visible = ref(false);
+
+const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
+
+const element = ref<any>(undefined);
 
 const columns = [
     {
@@ -16,8 +23,6 @@ const columns = [
         header: "Email"
     }
 ]
-
-const visible = ref(false);
 </script>
 
 <template>
@@ -25,9 +30,15 @@ const visible = ref(false);
     <div>
         <Button @click="() => visible = true">{{ $t('management.users.create') }}</Button>
     </div>
+    
+    <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if(element) userController.delete(element.id) }"/>
+    
     <VTable :columns="columns" :value="userController.getElements().response.value">
         <template #actions="{ data }">
-            <Button @click="()=>{ userController.delete(data.id) }">delete</Button>
+            <Button @click="()=>{
+                element = data;
+                deleteConfirmation.showConfirm()
+            }">delete</Button>
         </template>
     </VTable>
 

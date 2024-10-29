@@ -5,7 +5,7 @@ import Button from 'primevue/button';
 import { Form } from 'vee-validate';
 import VInput from '@/common/components/VInput.vue';
 import { registerController } from '../controllers/authController';
-import { userSchema } from '../schemas/user.schema';
+import { userSchema } from '../../users/schemas/user.schema';
 
 defineExpose({
     header: useI18n().t('auth.register.header')

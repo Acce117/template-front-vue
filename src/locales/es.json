@@ -24,15 +24,15 @@
             }
         }
     },
-
-    
     "management": {
         "users": {
             "title": "Usuarios",
-            "create": "Nuevo Usuario"
+            "create": "Nuevo Usuario",
+            "create_modal": {
+                "action": "Crear usuario"
+            }
         }
     },
-
     "users": {
         "name": "Nombres",
         "lastname": "Apellidos",

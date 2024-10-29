@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import VTable from '@/components/VTable.vue';
 import Button from 'primevue/button';
+import userController from '../controller/UserController';
+import { ref } from 'vue';
+import CreateUser from './CreateUser.vue';
+import VDialog from '@/components/VDialog.vue';
 
 const columns = [
     {
@@ -13,20 +17,27 @@ const columns = [
     }
 ]
 
-const users = [
-    {
-        username: 'Acce117',
-        email: 'e.carraler117@gmail.com'
-    }
-]
+const visible = ref(false);
 </script>
 
 <template>
     <h2>{{ $t('management.users.title') }}</h2>
     <div>
-        <Button>{{ $t('management.users.create') }}</Button>
+        <Button @click="() => visible = true">{{ $t('management.users.create') }}</Button>
     </div>
-    <VTable :columns="columns" :value="users"></VTable>
+    <VTable :columns="columns" :value="userController.getElements().response.value">
+        <template #actions="{ data }">
+            <Button @click="()=>{ userController.delete(data.id) }">delete</Button>
+        </template>
+    </VTable>
+
+    <VDialog v-model:visible="visible" :title="$t('management.users.create')">
+        <CreateUser 
+        @submit="(data)=>{
+            userController.createElement(data);
+            visible=false
+        }"></CreateUser>
+    </VDialog>
 </template>
 
 <style scoped>

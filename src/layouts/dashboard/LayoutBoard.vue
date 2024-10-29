@@ -19,7 +19,9 @@ const items = reactive<MenuItem[]>([
             <VMenu :model="items"></VMenu>
         </section>
         <div id="workspace">
-            <NavBar></NavBar>
+            <div>
+                <NavBar></NavBar>
+            </div>
             <Card>
                 <template #content>
                     <RouterView></RouterView>
@@ -51,5 +53,9 @@ section {
     align-items: center;
     padding: 0 1%;
     width: 85%;
+}
+
+#workspace div {
+    margin-bottom: 17px;
 }
 </style>

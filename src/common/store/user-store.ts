@@ -4,7 +4,8 @@ export interface UserInterface {
     id: number | string | null
     name: string | null,
     username: string | null,
-    role: [],
+    roles: Array<unknown>,
+    permissions: Array<unknown>,
 }
 
 export const userStore = defineStore('user', {
@@ -14,7 +15,8 @@ export const userStore = defineStore('user', {
             id: null,
             name: null,
             username: null,
-            role: [],
+            roles: [],
+            permissions: [],
         }
 
         return state;

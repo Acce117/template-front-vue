@@ -31,7 +31,10 @@
     "management": {
         "users": {
             "title": "Users",
-            "create": "New user"
+            "create": "New user",
+            "create_modal": {
+                "action": "Create user"
+            }
         }
     },
 

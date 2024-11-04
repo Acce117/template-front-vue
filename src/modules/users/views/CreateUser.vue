@@ -15,7 +15,7 @@ defineEmits([])
 </script>
 
 <template>
-    <Form :validation-schema="UserModel.getSchema()">
+    <Form :validation-schema="UserModel.getSchema()" v-slot="{ meta, errors }">
         <VInput name="username" label="username" class="create_input"></VInput>
 
         <VInput type="email" name="email" label="email" class="create_input"></VInput>

@@ -16,13 +16,15 @@ const model = defineModel();
 
 <template>
     <div>
-        <ErrorMessage :name="props.name" />
-        <FloatLabel variant="on" class="float_label">
-            <Field v-model="model" :name="props.name">
+        <Field v-model="model" :name="props.name">
+            <Transition name="fade">
+                <ErrorMessage :name="props.name" class="error_message"/>
+            </Transition>
+            <FloatLabel variant="on" class="float_label">
                 <InputText v-model="model" v-bind="{ ...$attrs }"></InputText>
-            </Field>
-            <label for="">{{ props.label }}</label>
-        </FloatLabel>
+                <label for="">{{ props.label }}</label>
+            </FloatLabel>
+        </Field>
     </div>
 </template>
 
@@ -33,5 +35,18 @@ const model = defineModel();
 
 input {
     width: 100%;
+}
+
+.fade-enter-active {
+  transition: all 0.15s ease-out;
+}
+
+.fade-leave-active {
+  transition: all 0.15s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -25,11 +25,17 @@
         }
     },
     "management": {
+        "delete": "Eliminar",
         "users": {
             "title": "Usuarios",
             "create": "Nuevo Usuario",
             "create_modal": {
                 "action": "Crear usuario"
+            }
+        },
+        "dialogs": {
+            "delete": {
+                "message": "¿Desea eliminar este elemento?"
             }
         }
     },

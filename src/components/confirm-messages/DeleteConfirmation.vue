@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import ConfirmDialog from "primevue/confirmdialog";
-import Toast from "primevue/toast";
 import { useConfirm } from "primevue/useconfirm";
-import { useToast } from "primevue/usetoast";
+import { useI18n } from "vue-i18n";
 
 const confirm = useConfirm();
-const toast = useToast();
-
+const i18n = useI18n();
 const emit = defineEmits(['accept', 'reject']);
 
 const showConfirm = () => {
     confirm.require({
-        message: 'Do you want to delete this record?',
-        header: 'Danger Zone',
+        message: i18n.t('management.dialogs.delete.message'),
+        header: i18n.t('management.delete'),
         icon: 'pi pi-info-circle',
         rejectLabel: 'Cancel',
         rejectProps: {
@@ -39,6 +37,5 @@ defineExpose({
 </script>
 
 <template>
-    <Toast />
     <ConfirmDialog></ConfirmDialog>
 </template>

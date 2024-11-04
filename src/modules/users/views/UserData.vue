@@ -6,6 +6,9 @@ import VDialog from '@/components/VDialog.vue';
 import DeleteConfirmation from '@/components/confirm-messages/DeleteConfirmation.vue';
 import userController from '../controller/UserController';
 import CreateUser from './CreateUser.vue';
+import { useI18n } from 'vue-i18n';
+
+const i18n = useI18n();
 
 const visible = ref(false);
 
@@ -13,16 +16,16 @@ const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
 
-const columns = [
+const columns = ref([
     {
         field: "username",
-        header: "Username",
+        header: i18n.t('users.username'),
     },
     {
         field: "email",
-        header: "Email"
+        header: i18n.t('users.email')
     }
-]
+]);
 </script>
 
 <template>
@@ -38,7 +41,7 @@ const columns = [
             <Button @click="()=>{
                 element = data;
                 deleteConfirmation.showConfirm()
-            }">delete</Button>
+            }">{{ $t('management.delete').toLowerCase() }}</Button>
         </template>
     </VTable>
 

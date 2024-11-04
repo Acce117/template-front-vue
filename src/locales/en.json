@@ -29,11 +29,17 @@
     },
     
     "management": {
+        "delete": "Delete",
         "users": {
             "title": "Users",
             "create": "New user",
             "create_modal": {
                 "action": "Create user"
+            }
+        },
+        "dialogs": {
+            "delete": {
+                "message": "Do you want to delete this record?"
             }
         }
     },

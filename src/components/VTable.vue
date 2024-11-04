@@ -13,14 +13,13 @@ const props = defineProps({
 
 <template>
     <div class="card">
-        <DataTable stripedRows style="min-width: 75rem;" v-bind="{ ...$attrs, ...props}">
+        <DataTable stripedRows style="min-width: 75rem;" v-bind="{ ...$attrs }">
             <Column v-for="column of props.columns" :field="column.field" :header="column.header">
             </Column>
             
             <Column header="actions">
                 <template #body="{ data }">
-                    <slot name="actions" :data>
-                    </slot>
+                    <slot name="actions" :data ></slot>
                 </template>
             </Column>
         </DataTable>

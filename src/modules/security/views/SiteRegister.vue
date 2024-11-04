@@ -5,7 +5,7 @@ import Button from 'primevue/button';
 import { Form } from 'vee-validate';
 import VInput from '@/common/components/VInput.vue';
 import { registerController } from '../controllers/authController';
-import { userSchema } from '../../users/schemas/user.schema';
+import { UserModel } from '@/modules/users/classes/user';
 
 defineExpose({
     header: useI18n().t('auth.register.header')
@@ -13,7 +13,7 @@ defineExpose({
 </script>
 
 <template>
-    <Form action="" @submit.prevent="registerController.sendRequestTools.sendRequest()" :validation-schema="userSchema">
+    <Form action="" @submit.prevent="registerController.sendRequestTools.sendRequest()" :validation-schema="UserModel.getSchema()">
         <VInput v-model="registerController.credentials.username" :label="$t('auth.user')" class="auth_input" name="username"></VInput>
         <VInput type="password" v-model="registerController.credentials.password" :label="$t('auth.password')" class="auth_input" name="password"></VInput>
 

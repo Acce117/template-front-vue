@@ -3,9 +3,9 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 
 const props = defineProps({
-    columns: {
+    model: {
         required: true,
-        type: Array<any>
+        type: Array<{ header: string, field: string }>
     },
 });
 
@@ -14,7 +14,7 @@ const props = defineProps({
 <template>
     <div class="card">
         <DataTable stripedRows style="min-width: 75rem;" v-bind="{ ...$attrs }">
-            <Column v-for="column of props.columns" :field="column.field" :header="column.header">
+            <Column v-for="column of model" :field="column.field" :header="column.header">
             </Column>
             
             <Column header="actions">

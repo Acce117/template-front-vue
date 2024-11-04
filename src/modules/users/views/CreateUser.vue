@@ -2,7 +2,7 @@
 import VInput from '@/common/components/VInput.vue';
 import Button from 'primevue/button';
 import { Form } from 'vee-validate';
-import { userSchema } from '../schemas/user.schema';
+import { UserModel } from '../classes/user';
 
 const props = defineProps({
     submitCb: {
@@ -15,7 +15,7 @@ defineEmits([])
 </script>
 
 <template>
-    <Form :validation-schema="userSchema">
+    <Form :validation-schema="UserModel.getSchema()">
         <VInput name="username" label="username" class="create_input"></VInput>
 
         <VInput type="email" name="email" label="email" class="create_input"></VInput>

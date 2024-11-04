@@ -6,26 +6,13 @@ import VDialog from '@/components/VDialog.vue';
 import DeleteConfirmation from '@/components/confirm-messages/DeleteConfirmation.vue';
 import userController from '../controller/UserController';
 import CreateUser from './CreateUser.vue';
-import { useI18n } from 'vue-i18n';
-
-const i18n = useI18n();
+import { UserModel } from '../classes/user';
 
 const visible = ref(false);
 
 const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
-
-const columns = ref([
-    {
-        field: "username",
-        header: i18n.t('users.username'),
-    },
-    {
-        field: "email",
-        header: i18n.t('users.email')
-    }
-]);
 </script>
 
 <template>
@@ -36,7 +23,7 @@ const columns = ref([
     
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if(element) userController.delete(element.id) }"/>
     
-    <VTable :columns="columns" :value="userController.getElements().response.value">
+    <VTable :model="UserModel.getColumns()" :value="userController.getElements().response.value">
         <template #actions="{ data }">
             <Button @click="()=>{
                 element = data;

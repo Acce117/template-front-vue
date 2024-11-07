@@ -3,24 +3,31 @@ import NavBar from '@/components/NavBar.vue';
 import VMenu from '@/components/VMenu.vue';
 import Card from 'primevue/card';
 import type { MenuItem } from 'primevue/menuitem';
-import { reactive } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { RouterLink } from 'vue-router';
 
-const items = reactive<MenuItem[]>([
-    {
-        label: 'Users',
-        route: '/management/users'
-    }
-])
+function menuOptions(): MenuItem[] {
+    return [
+        {
+            label: useI18n().t('management.users.title'),
+            route: '/management/users'
+        }
+    ]
+}
 </script>
 
 <template>
     <div id="dashboard">
         <section id="menu">
-            <VMenu :model="items"></VMenu>
+            <VMenu :model="menuOptions()" :title="$t('menu.header')"</VMenu>
         </section>
         <div id="workspace">
             <div>
-                <NavBar></NavBar>
+                <NavBar :title="$t('nav_bar.header')">
+                    <template #router>
+                        <RouterLink to="/">Home</RouterLink>
+                    </template>
+                </NavBar>
             </div>
             <Card>
                 <template #content>

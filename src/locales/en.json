@@ -14,10 +14,19 @@
             "account": "Already have an account?"
         }
     },
+    
+    "nav_bar": {
+        "header": "Title"
+    },
+
     "home": {
         
     },
     
+    "menu": {
+        "header": "Menu"
+    },
+
     "profile": {
         "title": "My Profile",
         "dialogs": {

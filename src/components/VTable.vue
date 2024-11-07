@@ -7,6 +7,14 @@ const props = defineProps({
         required: true,
         type: Array<{ header: string, field: string }>
     },
+    actions: {
+        type: Boolean,
+        default: true
+    },
+    actions_header: {
+        type: String,
+        default: 'actions'
+    }
 });
 
 </script>
@@ -17,7 +25,7 @@ const props = defineProps({
             <Column v-for="column of model" :field="column.field" :header="column.header">
             </Column>
             
-            <Column header="actions">
+            <Column :header="actions_header">
                 <template #body="{ data }">
                     <slot name="actions" :data ></slot>
                 </template>

@@ -37,7 +37,8 @@
             "delete": {
                 "message": "¿Desea eliminar este elemento?"
             }
-        }
+        },
+        "actions": "Acciones"
     },
     "users": {
         "name": "Nombres",

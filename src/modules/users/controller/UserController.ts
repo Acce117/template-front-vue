@@ -24,7 +24,7 @@ class UserController extends BaseController<UserModel>('users'){
      * The functionalities implemented here work with a mock data used for visualization
      */
 
-    //TODO removed, not necessary
+    //TODO remove, not necessary
     public createElement(data: UserModel): SendRequestTools {
         users.value.push({id: ++actualId, ...data});
         return { 
@@ -35,7 +35,7 @@ class UserController extends BaseController<UserModel>('users'){
         };
     }
 
-    //TODO removed, not necessary
+    //TODO remove, not necessary
     public delete(id: number | string): SendRequestTools {
         users.value = users.value.filter((e: { id: string | number; })=>e.id !== id)
         return { 
@@ -46,7 +46,7 @@ class UserController extends BaseController<UserModel>('users'){
         };
     }
 
-    //TODO removed, not necessary
+    //TODO remove, not necessary
     public getElements(params?: Object): SendRequestTools {
         return { 
             error: ref(null),
@@ -56,7 +56,7 @@ class UserController extends BaseController<UserModel>('users'){
         };
     }
 
-    //TODO removed, not necessary
+    //TODO remove, not necessary
     public update(id: number | string, data: UserModel): SendRequestTools {
         return { 
             error: ref(null),

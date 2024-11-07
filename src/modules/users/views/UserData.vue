@@ -23,7 +23,7 @@ const element = ref<any>(undefined);
     
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if(element) userController.delete(element.id) }"/>
     
-    <VTable :model="UserModel.getColumns()" :value="userController.getElements().response.value">
+    <VTable :model="UserModel.getColumns()" :value="userController.getElements().response.value" :actions_header="$t('management.actions')">
         <template #actions="{ data }">
             <Button @click="()=>{
                 element = data;

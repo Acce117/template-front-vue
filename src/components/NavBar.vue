@@ -2,24 +2,18 @@
 import Menubar from 'primevue/menubar';
 import LanguageSelector from './LanguageSelector.vue';
 
-const props = defineProps({
-    title: {
-        type: String,
-        required: true
-    }
-})
+const props = defineProps({})
 </script>
 
 <template>
     <Menubar>
         <template #start>
-            <h2>{{ title }}</h2>
+            <h2>{{ $t('nav_bar.header') }}</h2>
         </template>
         <template #end>
             <div>
                 <LanguageSelector></LanguageSelector>
-                <!-- TODO change router for icon or Logged User options to nav -->
-                <slot name="router"></slot>
+                <slot name="avatar"></slot>
             </div>
         </template>
     </Menubar>
@@ -27,7 +21,6 @@ const props = defineProps({
 
 <style scoped>
 nav {
-    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

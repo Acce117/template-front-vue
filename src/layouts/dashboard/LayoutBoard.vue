@@ -1,10 +1,30 @@
 <script setup lang="ts">
-import NavBar from '@/components/NavBar.vue';
-import VMenu from '@/components/VMenu.vue';
-import Card from 'primevue/card';
-import type { MenuItem } from 'primevue/menuitem';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-import { RouterLink } from 'vue-router';
+import type { MenuItem } from 'primevue/menuitem';
+import Card from 'primevue/card';
+import NavBar from '@/components/NavBar.vue';
+import VAvatar from '@/components/VAvatar.vue';
+import VMenu from '@/components/VMenu.vue';
+
+const router = useRouter();
+
+const items = ref<MenuItem[]>([
+    {
+        label: 'Options',
+        items: [
+            {
+                label: 'Home',
+                command: ()=>{ router.push('/') }
+            },
+            {
+                label: 'Log out',
+                command: ()=>{ router.push('/login') }
+            }
+        ]
+    }
+]);
 
 function menuOptions(): MenuItem[] {
     return [
@@ -19,13 +39,13 @@ function menuOptions(): MenuItem[] {
 <template>
     <div id="dashboard">
         <section id="menu">
-            <VMenu :model="menuOptions()" :title="$t('menu.header')"</VMenu>
+            <VMenu :model="menuOptions()" :title="$t('menu.header')"></VMenu>
         </section>
         <div id="workspace">
             <div>
-                <NavBar :title="$t('nav_bar.header')">
-                    <template #router>
-                        <RouterLink to="/">Home</RouterLink>
+                <NavBar>
+                    <template #avatar>
+                        <VAvatar :items="items"></VAvatar>
                     </template>
                 </NavBar>
             </div>

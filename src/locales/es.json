@@ -6,7 +6,8 @@
             "header": "Iniciar Sesión",
             "login": "Iniciar Sesión",
             "error": "Inicio de sesión inválido",
-            "not_account": "¿No tiene una cuenta?"
+            "not_account": "¿No tiene una cuenta?",
+            "forgotten_password": "¿Ha olvidado la contraseña?"
         },
         "register": {
             "header": "Registrarse",
@@ -15,11 +16,13 @@
         }
     },
 
+    "site": {
+        "header": "Title"
+    },
+
     "nav_bar": {
         "header": "Título"
     },
-
-    "home": {},
         
     "menu": {
         "header": "Menú"

@@ -8,14 +8,13 @@ import { loginController } from '../controllers/authController';
 import { UserModel } from '@/modules/users/classes/user';
 
 defineExpose({
-    header: useI18n().t('auth.login.header')
+    header: 'auth.login.header'
 })
 </script>
 
 <template>
-    <Form @submit="loginController.sendRequestTools.sendRequest()" :validation-schema="UserModel.getSchema()">
+    <Form @submit="loginController.sendRequestTools.sendRequest()" :validation-schema="UserModel.getSchema('login')">
         <VInput v-model="loginController.credentials.username" :label="$t('auth.user')" class="auth_input" :name="'username'"></VInput>
-        <!-- <VInput type="email" :label="'email'" class="auth_input" :name="'email'"></VInput> -->
         <VInput type="password" v-model="loginController.credentials.password" :label="$t('auth.password')" class="auth_input" :name="'password'"></VInput>
         
         <RouterLink :to="'/register'">{{ $t('auth.login.forgotten_password') }}</RouterLink>

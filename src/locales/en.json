@@ -6,7 +6,8 @@
             "header": "Login",
             "login": "Log In",
             "error": "Invalid login",
-            "not_account": "Don't have an account?"
+            "not_account": "Don't have an account?",
+            "forgotten_password": "Did you forget the password?"
         },
         "register": {
             "header": "Register",
@@ -19,8 +20,8 @@
         "header": "Title"
     },
 
-    "home": {
-        
+    "nav_bar": {
+        "header": "Title"
     },
     
     "menu": {

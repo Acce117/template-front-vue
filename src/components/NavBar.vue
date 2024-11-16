@@ -8,7 +8,7 @@ const props = defineProps({})
 <template>
     <Menubar>
         <template #start>
-            <h2>{{ $t('nav_bar.header') }}</h2>
+            <h2>{{ $t('site.header') }}</h2>
         </template>
         <template #end>
             <div>

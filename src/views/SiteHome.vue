@@ -1,3 +1,10 @@
 <template>
-    <h1>Welcome, this is the landing page</h1>
+    <main>
+        <h1>
+            {{ $t('site.header') }}
+        </h1>
+    </main>
+    <footer>
+        <p>footer</p>
+    </footer>
 </template>

@@ -1,13 +1,23 @@
 form {
     display: flex;
     flex-direction: column;
+    width: 20rem;
 }
 
-a {
+a:first-of-type {
     margin-bottom: 13px;
 }
 
 .auth_input {
     margin-bottom: 27px;
-    width: 17rem;
+}
+
+.buttons_section {
+    display: flex;
+    justify-content: space-between;
+}
+.buttons_section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

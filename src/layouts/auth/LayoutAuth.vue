@@ -11,7 +11,7 @@ const authForm = ref<{header: string} | null>(null);
     <NavBar></NavBar>
     <div id="auth_container">
         <RouterView v-slot="{ Component }">
-            <Panel :header="$t(authForm?.header + '')">
+            <Panel :header="authForm?.header ? $t(authForm?.header + '') : ''">
                 <component :is="Component" ref="authForm"></component>
             </Panel>
         </RouterView>

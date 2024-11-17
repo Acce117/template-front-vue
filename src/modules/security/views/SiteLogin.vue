@@ -31,4 +31,4 @@ defineExpose({
     </Form>
 </template>
 
-<style scoped src="./styles/index.css"></style>
+<style scoped src="./styles/auth.css"></style>

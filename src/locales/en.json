@@ -13,6 +13,9 @@
             "header": "Register",
             "register": "Sign Up",
             "account": "Already have an account?"
+        },
+        "restore_password": {
+            "header": "Restore password"
         }
     },
     

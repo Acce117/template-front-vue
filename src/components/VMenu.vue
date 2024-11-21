@@ -11,7 +11,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Menu v-bind="{ ...$attrs, ...props }" style="width: 100%; border-radius: 10px; padding: 0 15px;">
+    <Menu v-bind="{ ...$attrs, ...props }" class="p-3">
         <template #start>
             <h2>{{ title }}</h2>
         </template>

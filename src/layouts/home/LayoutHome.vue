@@ -13,11 +13,11 @@ const items = ref<MenuItem[]>([
         items: [
             {
                 label: 'Dashboard',
-                command: ()=>{ router.push('/management') }
+                command: () => { router.push('/management') }
             },
             {
                 label: 'Log out',
-                command: ()=>{ router.push('/login') }
+                command: () => { router.push('/login') }
             }
         ]
     }
@@ -25,10 +25,14 @@ const items = ref<MenuItem[]>([
 </script>
 
 <template>
-    <NavBar>
-        <template #avatar>
-            <VAvatar :items="items"></VAvatar>
-        </template>
-    </NavBar>
-    <RouterView></RouterView>
+    <div class="position-fixed position-top-none w-screen">
+        <NavBar class="m-1">
+            <template #avatar>
+                <VAvatar :items="items"></VAvatar>
+            </template>
+        </NavBar>
+    </div>
+    <div class="h-screen w-screen p-2 pt-20">
+        <RouterView></RouterView>
+    </div>
 </template>

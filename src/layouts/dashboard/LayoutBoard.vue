@@ -37,12 +37,12 @@ function menuOptions(): MenuItem[] {
 </script>
 
 <template>
-    <div id="dashboard">
-        <section id="menu">
+    <div class="flex h-screen w-screen">
+        <section class="flex p-2">
             <VMenu :model="menuOptions()" :title="$t('menu.header')"></VMenu>
         </section>
-        <div id="workspace">
-            <div>
+        <div class="flex flex-col w-100% p-2">
+            <div class="mb-4">
                 <NavBar>
                     <template #avatar>
                         <VAvatar :items="items"></VAvatar>
@@ -57,32 +57,3 @@ function menuOptions(): MenuItem[] {
         </div>
     </div>
 </template>
-
-<style scoped>
-#dashboard {
-    display: flex;
-    height: 98vh;
-    justify-content: space-between;
-}
-
-section {
-    display: flex;
-    margin: 0px;
-}
-
-#menu {
-    justify-content: center;
-    width: 15%;
-}
-
-#workspace {
-    justify-content: center;
-    align-items: center;
-    padding: 0 1%;
-    width: 85%;
-}
-
-#workspace div {
-    margin-bottom: 17px;
-}
-</style>

@@ -1,11 +1,14 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 a {
     text-decoration: none;
 }
 
-.error_message {
-    color: red;
+ul {
+    display: inline;
+    list-style-type: none;
 }

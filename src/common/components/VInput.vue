@@ -15,13 +15,13 @@ const model = defineModel();
 </script>
 
 <template>
-    <div>
+    <div class="mb-7">
         <Field v-model="model" :name="props.name">
             <Transition name="fade">
-                <ErrorMessage :name="props.name" class="error_message"/>
+                <ErrorMessage :name="props.name" class="color-red-700"/>
             </Transition>
-            <FloatLabel variant="on" class="float_label">
-                <InputText v-model="model" v-bind="{ ...$attrs }"></InputText>
+            <FloatLabel variant="on" class="mt-2">
+                <InputText v-model="model" v-bind="{ ...$attrs }" class="w-100%"></InputText>
                 <label for="">{{ props.label }}</label>
             </FloatLabel>
         </Field>
@@ -29,14 +29,6 @@ const model = defineModel();
 </template>
 
 <style scoped>
-.float_label {
-    margin: 5px 0;
-}
-
-input {
-    width: 100%;
-}
-
 .fade-enter-active {
   transition: all 0.15s ease-out;
 }

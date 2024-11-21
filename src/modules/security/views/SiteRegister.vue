@@ -19,15 +19,15 @@ defineExpose({
         <VInput type="password" v-model="registerController.credentials.password" :label="$t('auth.password')" class="auth_input" name="password"></VInput>
 
         <Divider />
-        <div class="buttons_section">
-            <div>
-                <RouterLink :to="'/login'">{{ $t('auth.register.account') }}</RouterLink>
-            </div>
-            <div>
+        <div class="flex flex-align-center flex-justify-between flex-wrap">
+            <ul class="mr-5 flex flex-col flex-justify-center">
+                <li>
+                    <RouterLink :to="'/login'">{{ $t('auth.register.account') }}</RouterLink>
+                </li>
+            </ul>
+            <div class="flex flex-col flex-justify-center flex-grow mt-3 mb-3">
                 <Button type="submit" size="small">{{ $t('auth.register.register') }}</Button>
             </div>
         </div>
     </Form>
 </template>
-
-<style scoped src="./styles/auth.css"></style>

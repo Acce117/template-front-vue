@@ -7,7 +7,7 @@
             "login": "Iniciar Sesión",
             "error": "Inicio de sesión inválido",
             "not_account": "¿No tiene una cuenta?",
-            "forgotten_password": "¿Ha olvidado la contraseña?"
+            "forgotten_password": "¿Olvidó su contraseña?"
         },
         "register": {
             "header": "Registrarse",

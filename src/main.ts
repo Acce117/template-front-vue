@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia';
+import 'virtual:uno.css'
 import { i18n } from "./plugins/i18n";
 
 import App from './App.vue'

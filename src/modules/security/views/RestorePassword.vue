@@ -67,5 +67,3 @@ defineExpose({
         </Stepper>
     </div>
 </template>
-
-<style scoped src="./styles/restore_password.css"></style>

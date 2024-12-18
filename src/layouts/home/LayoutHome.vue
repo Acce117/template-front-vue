@@ -4,21 +4,21 @@ import { RouterView, useRouter } from 'vue-router';
 import type { MenuItem } from 'primevue/menuitem';
 import NavBar from '@/components/NavBar.vue';
 import VAvatar from '@/components/VAvatar.vue';
+import { useI18n } from 'vue-i18n';
+import { userStore } from '@/common/store/user-store';
 
 const router = useRouter();
+const i18n = useI18n();
 
 const items = ref<MenuItem[]>([
     {
         label: 'Options',
         items: [
             {
-                label: 'Dashboard',
+                label: () => i18n.t('nav-options.dashboard'),
                 command: () => { router.push('/management') }
             },
-            {
-                label: 'Log out',
-                command: () => { router.push('/login') }
-            }
+            ...userStore().options()
         ]
     }
 ]);

@@ -4,6 +4,9 @@ import Aura from '@primevue/themes/lara';
 
 export const primevueConfig = {
     theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+            darkModeSelector: '.app-dark'
+        }
     }
 };

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import 'vue-i18n';
 import Button from 'primevue/button';
 import { Form } from 'vee-validate';
 import VInput from '@/common/components/VInput.vue';

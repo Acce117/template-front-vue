@@ -1,20 +1,21 @@
-import { createApp } from 'vue'
+import '@/config/config.ts';
+import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import 'virtual:uno.css'
+import 'virtual:uno.css';
 import { i18n } from "./plugins/i18n";
 
-import App from './App.vue'
-import router from './router'
+import App from './App.vue';
+import router from './router';
 import PrimeVue from 'primevue/config';
 import { primevueConfig } from './plugins/primevue';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.use(router);
 app.use(i18n);
 app.use(PrimeVue, primevueConfig);
 app.use(ConfirmationService);
 app.use(ToastService);
-app.use(createPinia()).mount('#app')
+app.use(createPinia()).mount('#app');

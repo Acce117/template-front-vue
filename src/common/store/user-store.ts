@@ -1,4 +1,7 @@
+import { i18n } from "@/plugins/i18n";
 import { defineStore } from "pinia";
+import type { MenuItem } from "primevue/menuitem";
+import { useRouter } from "vue-router";
 
 export interface UserInterface {
     id: number | string | null
@@ -21,4 +24,15 @@ export const userStore = defineStore('user', {
 
         return state;
     },
+
+    actions: {
+        options(): MenuItem[] {
+            return [
+                {
+                    label: () => i18n.global.t('nav-options.log-out'),
+                    route: () => { useRouter().push('/login') }
+                }
+            ]
+        }
+    }
 });

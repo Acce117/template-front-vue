@@ -11,13 +11,13 @@ const props = defineProps({
 </script>
 
 <template>
-    <Menu v-bind="{ ...$attrs, ...props }" class="p-3">
+    <Menu v-bind="$attrs" class="p-3">
         <template #start>
             <h2>{{ title }}</h2>
         </template>
         <template #item="{ item, props }">
-            <RouterLink v-if="item.route" v-slot="{ href, navigate }" :to="item.route">
-                {{ item.label }}
+            <RouterLink v-if="item.route" :to="item.route" >
+                {{ typeof(item.label) !== 'function' ? item.label : item.label() }}
             </RouterLink>
         </template>
     </Menu>

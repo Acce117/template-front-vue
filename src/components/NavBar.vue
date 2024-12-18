@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import Menubar from 'primevue/menubar';
 import LanguageSelector from './LanguageSelector.vue';
+import Button from 'primevue/button';
 
 const props = defineProps({})
+
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('app-dark');
+}
 </script>
 
 <template>
@@ -13,6 +18,7 @@ const props = defineProps({})
         <template #end>
             <div>
                 <LanguageSelector></LanguageSelector>
+                <Button @click="toggleDarkMode()">Dark Mode</Button>
                 <slot name="avatar"></slot>
             </div>
         </template>

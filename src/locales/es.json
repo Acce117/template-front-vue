@@ -74,5 +74,11 @@
         "empty": "El campo no puede estar vacío",
         "email": "El dato introducido no es un correo",
         "existent_username": "Este nombre de usuario ya existe"
+    },
+
+    "nav-options": {
+        "dashboard": "Panel de trabajo",
+        "home": "Inicio",
+        "log-out": "Cerrar sesión"
     }
 }

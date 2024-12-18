@@ -76,6 +76,8 @@
         "existent_username": "Este nombre de usuario ya existe"
     },
 
+    "options": "Opciones",
+
     "nav-options": {
         "dashboard": "Panel de trabajo",
         "home": "Inicio",

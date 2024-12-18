@@ -1,4 +1,3 @@
-import '@/config/config.ts';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import 'virtual:uno.css';

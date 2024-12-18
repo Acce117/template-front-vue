@@ -80,6 +80,8 @@
         "existent_username": "This username already exists"
     },
 
+    "options": "Options",
+
     "nav-options": {
         "dashboard": "Dashboard",
         "home": "Home",

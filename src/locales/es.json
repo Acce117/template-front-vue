@@ -78,9 +78,26 @@
 
     "options": "Opciones",
 
+    "recover-password": {
+        "email": "Ingrese el correo para enviarle el código de recuperación",
+        "recover-code": "Verifique su correo e ingrese el código recibido",
+    },
+    
+    "change-password": {
+        "new-password": "Ingrese una nueva contraseña",
+        "confirm-password": "Confirmar contraseña"
+    },
+
     "nav-options": {
         "dashboard": "Panel de trabajo",
         "home": "Inicio",
         "log-out": "Cerrar sesión"
+    },
+
+    "actions": {
+        "accept": "Aceptar",
+        "next": "Siguiente",
+        "back": "Atras",
+        "cancel": "Cancelar"
     }
 }

@@ -82,9 +82,26 @@
 
     "options": "Options",
 
+    "recover-password": {
+        "email": "Enter your email to send a recovering code",
+        "recover-code": "Verify your mailbox and enter the recovering code",
+    },
+    
+    "change-password": {
+        "new-password": "Enter a new password",
+        "confirm-password": "Confirm password"
+    },
+
     "nav-options": {
         "dashboard": "Dashboard",
         "home": "Home",
         "log-out": "Log out"
+    },
+
+    "actions": {
+        "accept": "Accept",
+        "next": "Next",
+        "back": "Back",
+        "cancel": "Cancel"
     }
 }

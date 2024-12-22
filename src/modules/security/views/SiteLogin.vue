@@ -18,7 +18,7 @@ defineExpose({
 
         <Divider />
         <div class="flex flex-align-center flex-justify-between flex-wrap">
-            <ul class="mr-5 flex flex-col flex-justify-center">
+            <ul class="mr-3 flex flex-col flex-justify-center">
                 <li>
                     <RouterLink :to="'/restore_password'">{{ $t('auth.login.forgotten_password') }}</RouterLink>
                 </li>
@@ -27,7 +27,7 @@ defineExpose({
                 </li>
             </ul>
             <div class="flex flex-col flex-justify-center flex-grow mt-3 mb-3">
-                <Button type="submit" size="small">{{ $t('auth.login.login') }}</Button>
+                <Button type="submit" class="w-33">{{ $t('auth.login.login') }}</Button>
             </div>
         </div>
 

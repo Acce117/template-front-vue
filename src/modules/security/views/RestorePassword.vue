@@ -19,47 +19,46 @@ defineExpose({
     <div class="card flex justify-center">
         <Stepper value="1" linear class="basis-[50rem]">
             <StepList>
-                <Step value="1">Header I</Step>
-                <Step value="2">Header II</Step>
-                <Step value="3">Header III</Step>
+                <Step value="1"></Step>
+                <Step value="2"></Step>
+                <Step value="3"></Step>
             </StepList>
             <StepPanels>
                 <StepPanel v-slot="{ activateCallback }" value="1">
-                    <Form>
-                        <div class="step_container">
-                            <p>Ingrese el correo para enviarle el código de recuperación</p>
-                            <VInput label="email" name="email" type="email"></VInput>
+                    <Form class="p-2 w-74">
+                        <div class="">
+                            <p class="mb-7">{{ $t('recover-password.email') }}</p>
+                            <VInput :label="$t('users.email')" name="email" type="email"></VInput>
                         </div>
-                        <div class="button_step_nav">
-                            <Button label="Cancel" severity="secondary" />
-                            <Button label="Next" @click="activateCallback('2')" />
+                        <div class="flex flex-justify-end">
+                            <Button :label="$t('actions.next')" @click="activateCallback('2')" class="w-25"/>
                         </div>
                     </Form>
                 </StepPanel>
                 <StepPanel v-slot="{ activateCallback }" value="2">
-                    <Form>
-                        <div class="step_container">
-                            <p>Verifique su correo e ingrese el código recibido</p>
-                            <div style="margin: auto;">
+                    <Form class="p-2 w-74">
+                        <div>
+                            <p class="mb-7">{{ $t('recover-password.recover-code') }}</p>
+                            <div class="flex flex-justify-center mb-7">
                                 <InputOtp :length="6" integer-only></InputOtp>
                             </div>
                         </div>
-                        <div class="button_step_nav">
-                            <Button label="Back" severity="secondary" @click="activateCallback('1')" />
-                            <Button label="Next" @click="activateCallback('3')" />
+                        <div class="flex flex-justify-between">
+                            <Button :label="$t('actions.back')" severity="secondary" @click="activateCallback('1')" class="w-25"/>
+                            <Button :label="$t('actions.next')" @click="activateCallback('3')" class="w-25"/>
                         </div>
                     </Form>
                 </StepPanel>
                 <StepPanel v-slot="{ activateCallback }" value="3">
-                    <Form>
-                        <div class="step_container">
-                            <p>Ingrese una nueva contraseña</p>
-                            <VInput label="Password" name="password" class="auth_input"></VInput>
-                            <VInput label="Confirm password" name="confirm_password" class="auth_input"></VInput>
+                    <Form class="p-2 w-74">
+                        <div>
+                            <p class="mb-7">{{ $t('change-password.new-password') }}</p>
+                            <VInput :label="$t('auth.password')" name="password" class="auth_input"></VInput>
+                            <VInput :label="$t('change-password.confirm-password')" name="confirm_password" class="auth_input"></VInput>
                         </div>
-                        <div class="button_step_nav">
-                            <Button label="Back" severity="secondary" @click="activateCallback('2')" />
-                            <Button label="Accept" />
+                        <div class="flex flex-justify-between">
+                            <Button :label="$t('actions.back')" severity="secondary" @click="activateCallback('2')" class="w-25"/>
+                            <Button :label="$t('actions.accept')" class="w-25"/>
                         </div>
                     </Form>
                 </StepPanel>

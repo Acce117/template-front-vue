@@ -80,7 +80,7 @@
 
     "recover-password": {
         "email": "Ingrese el correo para enviarle el código de recuperación",
-        "recover-code": "Verifique su correo e ingrese el código recibido",
+        "recover-code": "Verifique su correo e ingrese el código recibido"
     },
     
     "change-password": {

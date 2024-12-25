@@ -84,7 +84,7 @@
 
     "recover-password": {
         "email": "Enter your email to send a recovering code",
-        "recover-code": "Verify your mailbox and enter the recovering code",
+        "recover-code": "Verify your mailbox and enter the recovering code"
     },
     
     "change-password": {

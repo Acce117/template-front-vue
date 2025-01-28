@@ -15,7 +15,7 @@ const model = defineModel();
 </script>
 
 <template>
-    <div class="mb-7">
+    <div>
         <Field v-model="model" :name="props.name">
             <Transition name="fade">
                 <ErrorMessage :name="props.name" class="color-red-700"/>

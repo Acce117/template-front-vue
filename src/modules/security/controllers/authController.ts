@@ -8,22 +8,22 @@ import { userStore } from "@/common/store/user-store";
 export class AuthController {
     credentials: UserCredentials;
     sendRequestTools: SendRequestTools;
+    context: boolean = false;
 
-    constructor(url: string) {
-        this.credentials = reactive<UserCredentials>({
-            username: '',
-            password: '',
-        });
-
+    constructor(context: { getCredentials: Function, getUrl: Function }) {
+        this.credentials = context.getCredentials();
+        
         this.sendRequestTools = useSendRequest(
-            url,
+            context.getUrl(),
             {
                 method: 'POST',
-                data: toValue(this.credentials),
+                data: (toValue(this.credentials) as UserCredentials),
                 lazy: true,
                 cb: this.loginResHandler
             },
         );
+
+        this.context = true
     }
 
     private loginResHandler = (response: Ref<any>, error: Ref<AxiosError | null>) => {
@@ -40,7 +40,3 @@ export class AuthController {
         }
     }
 }
-
-//change url if necessary
-export const loginController = new AuthController('login');
-export const registerController = new AuthController('register');

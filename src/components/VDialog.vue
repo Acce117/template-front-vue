@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
     <Dialog modal>
         <template #header>
-            <h2>{{ props.title }}</h2>
+            <h2 class="mr-20">{{ props.title }}</h2>
         </template>
         <slot>
 

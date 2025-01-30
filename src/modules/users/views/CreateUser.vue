@@ -15,31 +15,21 @@ defineEmits([])
 </script>
 
 <template>
-    <Form :validation-schema="UserModel.getSchema()" v-slot="{ meta, errors }">
-        <VInput name="username" label="username" class="create_input"></VInput>
+    <Form :validation-schema="UserModel.getSchema()" v-slot="{ meta, errors }" class="flex flex-col">
+        <div class="mb-5">
+            <VInput name="username" label="username" class="create_input"></VInput>
+        </div>
 
-        <VInput type="email" name="email" label="email" class="create_input"></VInput>
+        <div class="mb-5">
+            <VInput type="email" name="email" label="email" class="create_input"></VInput>
+        </div>
 
-        <VInput type="password" name="password" label="password" class="create_input"></VInput>
+        <div class="mb-10">
+            <VInput type="password" name="password" label="password" class="create_input"></VInput>
+        </div>
 
-        <div class="actions">
+        <div class="flex flex-justify-end">
             <Button type="submit">{{ $t('management.users.create_modal.action') }}</Button>
         </div>
     </Form>
 </template>
-
-<style scoped>
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.create_input {
-    margin-bottom: 27px;
-}
-
-.actions {
-    display: flex;
-    justify-content: end;
-}
-</style>

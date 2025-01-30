@@ -16,8 +16,6 @@ const props = defineProps({
 
 const model = ref([{ label: () => i18n.t('options'), items: props.items }]);
 
-const router = useRouter();
-
 const menu = ref();
 
 function toggle(event: any) {

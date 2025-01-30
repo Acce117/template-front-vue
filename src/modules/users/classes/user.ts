@@ -21,7 +21,7 @@ export class UserModel{
         ];
     }
 
-    static getSchema (scenario : string): YupSchema {
+    static getSchema (scenario : string = 'create'): YupSchema {
         let username = yup.string().required();
         let email = yup.string().email();
         const password = yup.string().required()

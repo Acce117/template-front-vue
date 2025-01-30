@@ -16,11 +16,9 @@ const element = ref<any>(undefined);
 </script>
 
 <template>
-    <div class="flex flex-justify-between flex-align-center">
+    <div class="flex flex-justify-between flex-align-center mb-10">
         <h2>{{ $t('management.users.title') }}</h2>
-        <div>
-            <Button @click="() => visible = true" size="small">{{ $t('management.users.create') }}</Button>
-        </div>
+        <Button @click="() => visible = true" size="small">{{ $t('management.users.create') }}</Button>
     </div>
 
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userController.delete(element.id) }" />
@@ -42,9 +40,3 @@ const element = ref<any>(undefined);
         }"></CreateUser>
     </VDialog>
 </template>
-
-<style scoped>
-div {
-    margin-bottom: 20px;
-}
-</style>

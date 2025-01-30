@@ -17,13 +17,13 @@ const model = defineModel();
 <template>
     <div>
         <Field v-model="model" :name="props.name">
-            <Transition name="fade">
-                <ErrorMessage :name="props.name" class="color-red-700"/>
-            </Transition>
             <FloatLabel variant="on" class="mt-2">
                 <InputText v-model="model" v-bind="{ ...$attrs }" class="w-100%"></InputText>
                 <label for="">{{ props.label }}</label>
             </FloatLabel>
+            <Transition name="fade">
+                <ErrorMessage :name="props.name" class="color-red-700"/>
+            </Transition>
         </Field>
     </div>
 </template>

@@ -9,6 +9,7 @@ import PrimeVue from 'primevue/config';
 import { primevueConfig } from './plugins/primevue';
 import ConfirmationService from 'primevue/confirmationservice';
 import ToastService from 'primevue/toastservice';
+import { useAppStore } from './common/store/app-store';
 
 const app = createApp(App);
 
@@ -18,3 +19,5 @@ app.use(PrimeVue, primevueConfig);
 app.use(ConfirmationService);
 app.use(ToastService);
 app.use(createPinia()).mount('#app');
+
+useAppStore();

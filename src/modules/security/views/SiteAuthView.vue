@@ -13,7 +13,7 @@ const props = defineProps({
 const authController = new AuthController(props.context as { getCredentials: Function, getUrl: Function });
 
 defineExpose({
-    header: ()=>props.context.contextName
+    header: () => props.context.contextName
 })
 </script>
 
@@ -29,7 +29,8 @@ defineExpose({
                     :name="'password'"></VInput>
             </div>
             <div class="flex flex-justify-end">
-                <RouterLink v-if="context.contextId === 'login'" :to="'/restore_password'" class="text-size-sm">{{ $t('auth.login.forgotten_password') }}
+                <RouterLink v-if="context.contextId === 'login'" :to="'/restore_password'" class="text-size-sm">{{
+                    $t('auth.login.forgotten_password') }}
                 </RouterLink>
             </div>
         </div>

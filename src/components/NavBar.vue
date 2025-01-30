@@ -15,7 +15,7 @@ const props = defineProps({})
         </template>
         <template #end>
             <div class="flex flex-items-center">
-                
+
                 <Button @click="appStore.toggleDarkMode" unstyled class="border-none bg-transparent mr-3 ml-3">
                     <svg v-if="!appStore.darkMode" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                         viewBox="0 0 24 24">
@@ -26,8 +26,8 @@ const props = defineProps({})
                                     values="M12 19v1M19 12h1M12 5v-1M5 12h-1;M12 21v1M21 12h1M12 3v-1M3 12h-1" />
                                 <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s"
                                     values="2;0" />
-                                </path>
-                                <path stroke-dasharray="2" stroke-dashoffset="2"
+                            </path>
+                            <path stroke-dasharray="2" stroke-dashoffset="2"
                                 d="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5">
                                 <animate fill="freeze" attributeName="d" begin="0.8s" dur="0.2s"
                                     values="M17 17l0.5 0.5M17 7l0.5 -0.5M7 7l-0.5 -0.5M7 17l-0.5 0.5;M18.5 18.5l0.5 0.5M18.5 5.5l0.5 -0.5M5.5 5.5l-0.5 -0.5M5.5 18.5l-0.5 0.5" />
@@ -134,9 +134,9 @@ const props = defineProps({})
                                 <set fill="freeze" attributeName="opacity" begin="0.5s" to="0" />
                             </g>
                             <path fill="#e0e0e0"
-                            d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"
-                            opacity="0">
-                            <set fill="freeze" attributeName="opacity" begin="0.5s" to="1" />
+                                d="M7 6 C7 12.08 11.92 17 18 17 C18.53 17 19.05 16.96 19.56 16.89 C17.95 19.36 15.17 21 12 21 C7.03 21 3 16.97 3 12 C3 8.83 4.64 6.05 7.11 4.44 C7.04 4.95 7 5.47 7 6 Z"
+                                opacity="0">
+                                <set fill="freeze" attributeName="opacity" begin="0.5s" to="1" />
                             </path>
                         </g>
                         <mask id="lineMdSunnyFilledLoopToMoonFilledAltLoopTransition3">
@@ -159,8 +159,8 @@ const props = defineProps({})
                         </circle>
                     </svg>
                 </Button>
-                
-                <LanguageSelector></LanguageSelector>
+
+                <LanguageSelector class="mr-5 ml-1"></LanguageSelector>
 
                 <slot name="avatar"></slot>
             </div>

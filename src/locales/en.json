@@ -43,6 +43,7 @@
     
     "management": {
         "delete": "Delete",
+        "update": "Update",
         "users": {
             "title": "Users",
             "create": "New user",

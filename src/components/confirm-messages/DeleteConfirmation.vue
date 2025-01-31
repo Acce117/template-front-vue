@@ -11,23 +11,18 @@ const showConfirm = () => {
     confirm.require({
         message: i18n.t('management.dialogs.delete.message'),
         header: i18n.t('management.delete'),
-        icon: 'pi pi-info-circle',
-        rejectLabel: 'Cancel',
+        // icon: 'pi pi-info-circle',
         rejectProps: {
-            label: 'Cancel',
+            label: i18n.t('actions.cancel'),
             severity: 'secondary',
             outlined: true
         },
         acceptProps: {
-            label: 'Delete',
+            label: i18n.t('management.delete'),
             severity: 'danger'
         },
-        accept: () => {
-            emit('accept');
-        },
-        reject: () => {
-            emit('reject')
-        }
+        accept: () => emit('accept'),
+        reject: () => emit('reject')
     });
 };
 

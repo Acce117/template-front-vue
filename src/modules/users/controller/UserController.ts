@@ -13,12 +13,7 @@ const users = ref([
 //TODO remove
 let actualId = 1;
 
-//To visualize
-//TODO remove
 class UserController extends BaseController<UserModel>('users'){
-    constructor() {
-        super()
-    }
     /**
      * All CRUD functionalities can be removed since are generalized in BaseController
      * The functionalities implemented here work with a mock data used for visualization
@@ -58,6 +53,13 @@ class UserController extends BaseController<UserModel>('users'){
 
     //TODO remove, not necessary
     public update(id: number | string, data: UserModel): SendRequestTools {
+        const user = users.value.find((user)=> user.id === id);
+        
+        if(user) {
+            user.username = data.username;
+            user.email = data.email;
+        }
+
         return { 
             error: ref(null),
             loading: ref(false),

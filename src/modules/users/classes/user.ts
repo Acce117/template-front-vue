@@ -1,11 +1,17 @@
 import * as yup from 'yup';
 import { i18n } from '@/plugins/i18n';
 import type { YupSchema } from 'vee-validate';
-export class UserModel{
+
+export interface IUser {
+    username: string | yup.StringSchema;
+    email: string | yup.StringSchema;
+    password?: string | yup.StringSchema;
+}
+export class UserModel implements IUser{
     constructor(
-        public password: string,
         public username: string,
         public email: string,
+        public password?: string,
     ) {}
 
     static getColumns () {
@@ -24,14 +30,17 @@ export class UserModel{
     static getSchema (scenario : string = 'create'): YupSchema {
         let username = yup.string().required();
         let email = yup.string().email();
-        const password = yup.string().required()
         
-        if (scenario === 'create') email = email.required()
-        
-        return yup.object({
+        let schema: IUser = {
             username,
             email,
-            password
-        });
+        }
+
+        if (scenario === 'create'){ 
+            email = email.required() ;
+            schema = { ...schema, password: yup.string().required() }
+        }
+
+        return yup.object();
     }
 }

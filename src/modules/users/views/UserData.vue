@@ -13,12 +13,21 @@ const visible = ref(false);
 const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
+
+const submitCb = ref((...args: any[]) => { });
+
+const scenario = ref('create');
 </script>
 
 <template>
     <div class="flex flex-justify-between flex-align-center mb-10">
         <h2>{{ $t('management.users.title') }}</h2>
-        <Button @click="() => visible = true" size="small">{{ $t('management.users.create') }}</Button>
+        <Button @click="() => {
+            element = null;
+            scenario = 'create';
+            submitCb = userController.createElement;
+            visible = true
+        }" size="small">{{ $t('management.users.create') }}</Button>
     </div>
 
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userController.delete(element.id) }" />
@@ -27,16 +36,22 @@ const element = ref<any>(undefined);
         :actions_header="$t('management.actions')">
         <template #actions="{ data }">
             <Button @click="() => {
+                scenario = 'update';
+                element = data;
+                submitCb = userController.update;
+                visible = true
+            }" size="small" class="mr-2">{{ $t('management.update').toLowerCase() }}</Button>
+            <Button @click="() => {
                 element = data;
                 deleteConfirmation.showConfirm()
-            }" size="small">{{ $t('management.delete').toLowerCase() }}</Button>
+            }" size="small" severity="danger">{{ $t('management.delete').toLowerCase() }}</Button>
         </template>
     </VTable>
 
     <VDialog v-model:visible="visible" :title="$t('management.users.create')">
         <CreateUser @submit="(data) => {
-            userController.createElement(data);
+            submitCb(data);
             visible = false
-        }"></CreateUser>
+        }" :scenario :element></CreateUser>
     </VDialog>
 </template>

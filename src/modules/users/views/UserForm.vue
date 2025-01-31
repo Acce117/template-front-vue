@@ -34,7 +34,7 @@ const data = ref(props.element || {username: '', password: '', email: ''});
         </div>
 
         <div class="flex flex-justify-end">
-            <Button type="submit">{{ $t('management.users.create_modal.action') }}</Button>
+            <Button type="submit">{{ $t(`management.users.modal.${scenario}`) }}</Button>
         </div>
     </Form>
 </template>

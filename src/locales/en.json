@@ -47,9 +47,11 @@
         "users": {
             "title": "Users",
             "create": "New user",
-            "create_modal": {
-                "action": "Create user"
-            }
+            "modal": {
+                "create": "Create user",
+                "update": "Update user"
+            },
+            "update": "Update user"
         },
         "dialogs": {
             "delete": {

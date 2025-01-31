@@ -47,8 +47,10 @@
         "users": {
             "title": "Usuarios",
             "create": "Nuevo Usuario",
-            "create_modal": {
-                "action": "Crear usuario"
+            "update": "Actualizar usuario",
+            "modal": {
+                "create": "Crear usuario",
+                "update": "Actualizar usuario"
             }
         },
         "dialogs": {

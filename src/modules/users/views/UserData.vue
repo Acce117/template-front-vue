@@ -5,7 +5,7 @@ import VTable from '@/components/VTable.vue';
 import VDialog from '@/components/VDialog.vue';
 import DeleteConfirmation from '@/components/confirm-messages/DeleteConfirmation.vue';
 import userController from '../controller/UserController';
-import CreateUser from './CreateUser.vue';
+import UserForm from './UserForm.vue';
 import { UserModel } from '../classes/user';
 
 const visible = ref(false);
@@ -14,7 +14,7 @@ const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
 
-const submitCb = ref((...args: any[]) => { });
+const submitCb = ref<(...args: any[]) => any>(() => {});
 
 const scenario = ref('create');
 </script>
@@ -48,10 +48,10 @@ const scenario = ref('create');
         </template>
     </VTable>
 
-    <VDialog v-model:visible="visible" :title="$t('management.users.create')">
-        <CreateUser @submit="(data) => {
+    <VDialog v-model:visible="visible" :title="$t(`management.users.${scenario}`)">
+        <UserForm @submit="(data) => {
             submitCb(data);
             visible = false
-        }" :scenario :element></CreateUser>
+        }" :scenario :element></UserForm>
     </VDialog>
 </template>

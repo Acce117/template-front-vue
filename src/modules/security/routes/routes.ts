@@ -10,13 +10,13 @@ export function defineAuthRoutes(basePath: string = ''): RouteRecordRaw[] {
             path: `${basePath}/login`,
             component: SiteLogin,
             name: 'login',
-            props: { context: LoginContext }
+            props: { context: new LoginContext() }
         },
         {
             path: `${basePath}/register`,
             component: SiteLogin,
             name: 'register',
-            props: {context: SignInContext}
+            props: { context: new SignInContext() }
         },
         {
             path: `${basePath}/restore_password`,

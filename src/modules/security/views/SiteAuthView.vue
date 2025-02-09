@@ -18,6 +18,7 @@ defineExpose({
 </script>
 
 <template>
+    <h1 class="mb-10">{{ $t(context.contextName) }}</h1>
     <Form @submit="authController.sendRequestTools.sendRequest()" :validation-schema="UserModel.getSchema('login')">
         <div class="mb-5">
             <div class="mb-7">

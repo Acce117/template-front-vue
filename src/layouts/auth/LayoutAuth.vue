@@ -12,9 +12,9 @@ const authForm = ref<{ header: Function } | null>(null);
     </div>
     <RouterView v-slot="{ Component }">
         <div class="flex flex-col flex-justify-center w-screen h-screen">
-            <div class="m-a">
-                <h1 class="mb-10">{{ $t(authForm?.header() + '') }}</h1>
-                <component :is="Component" ref="authForm" class="w-76"></component>
+            <div class="m-a w-76">
+                <!-- <h1 class="mb-10">{{ $t(authForm?.header() + '') }}</h1> -->
+                <component :is="Component"></component>
             </div>
         </div>
     </RouterView>

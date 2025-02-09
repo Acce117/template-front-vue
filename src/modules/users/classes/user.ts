@@ -4,7 +4,7 @@ import type { YupSchema } from 'vee-validate';
 
 export interface IUser {
     username: string | yup.StringSchema;
-    email: string | yup.StringSchema;
+    email?: string | yup.StringSchema;
     password?: string | yup.StringSchema;
 }
 export class UserModel implements IUser{
@@ -31,16 +31,19 @@ export class UserModel implements IUser{
         let username = yup.string().required();
         let email = yup.string().email();
         
-        let schema: IUser = {
+        let schema: yup.ObjectShape = {
             username,
-            email,
         }
 
         if (scenario === 'create'){ 
-            email = email.required() ;
-            schema = { ...schema, password: yup.string().required() }
+            schema.email = email.required();
+            schema.password = yup.string().required();
         }
 
-        return yup.object();
+        if(scenario === 'login') {
+            schema.password = yup.string().required();
+        }
+
+        return yup.object(schema);
     }
 }

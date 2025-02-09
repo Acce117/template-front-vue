@@ -2,27 +2,27 @@ import { reactive } from "vue";
 import type { UserCredentials } from "../interfaces/userCredentials";
 
 export class SignInContext {
-    static contextId: string = 'sign_in';
+    contextId: string = 'sign_in';
 
-    static contextName: string = 'auth.register.header'
+    contextName: string = 'auth.register.header'
 
-    static redirect = { 
+    redirect = { 
         url: '/login',
         message: 'auth.register.account',
     }
 
-    static button = {
+    button = {
         message: 'auth.register.register'
     }
 
-    static getCredentials() {
+    getCredentials() {
         return reactive<UserCredentials>({
             username: '',
             password: '',
         });
     }
 
-    static getUrl() {
+    getUrl() {
         return 'sign_in';
     }
 }

@@ -14,26 +14,28 @@ const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
 
-const submitCb = ref<(...args: any[]) => any>(() => {});
+const submitCb = ref<(...args: any[]) => any>(() => { });
 
 const scenario = ref('create');
 </script>
 
 <template>
-    <div class="flex flex-justify-between flex-align-center mb-10">
+    <div class="flex flex-justify-between flex-align-center mb-5">
         <h2>{{ $t('management.users.title') }}</h2>
-        <Button @click="() => {
-            element = null;
-            scenario = 'create';
-            submitCb = userController.createElement;
-            visible = true
-        }" size="small">{{ $t('management.users.create') }}</Button>
     </div>
 
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userController.delete(element.id) }" />
 
     <VTable :model="UserModel.getColumns()" :value="userController.getElements().response.value"
         :actions_header="$t('management.actions')">
+        <template #header_actions>
+            <Button @click="() => {
+                element = null;
+                scenario = 'create';
+                submitCb = userController.createElement;
+                visible = true
+            }" size="small" class="mr-20">{{ $t('management.users.create') }}</Button>
+        </template>
         <template #actions="{ data }">
             <Button @click="() => {
                 scenario = 'update';

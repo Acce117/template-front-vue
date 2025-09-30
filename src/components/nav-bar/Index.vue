@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Menubar from 'primevue/menubar';
-import LanguageSelector from './LanguageSelector.vue';
+import LanguageSelector from '../LanguageSelector.vue';
 import Button from 'primevue/button';
 import { useAppStore } from '@/common/store/app-store';
 

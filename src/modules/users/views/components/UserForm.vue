@@ -2,7 +2,7 @@
 import VInput from '@/common/components/VInput.vue';
 import Button from 'primevue/button';
 import { Form } from 'vee-validate';
-import { UserModel } from '../classes/user';
+import { UserModel } from '../../classes/user';
 import { ref } from 'vue';
 
 const props = defineProps({

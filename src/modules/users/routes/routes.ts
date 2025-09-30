@@ -1,11 +1,11 @@
 import type { RouteRecordRaw } from "vue-router";
-import UserData from "../views/UserData.vue";
+import Users from "../views/Users.vue";
 
 export function defineUserRoutes(basePath: string = ''): RouteRecordRaw[] {
     return [
         {
             path: `${basePath}/users`,
-            component: UserData
+            component: Users
         }
     ];
 }

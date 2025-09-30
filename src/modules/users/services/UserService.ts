@@ -1,4 +1,4 @@
-import { BaseController } from "@/common/classes/Controller";
+import { BaseService } from "@/common/classes/service";
 import type { UserModel } from "../classes/user";
 import type { SendRequestTools } from "@/common/utils/useSendRequest";
 import { ref } from "vue";
@@ -13,9 +13,9 @@ const users = ref([
 //TODO remove
 let actualId = 1;
 
-class UserController extends BaseController<UserModel>('users'){
+export class UserService extends BaseService('users'){
     /**
-     * All CRUD functionalities can be removed since are generalized in BaseController
+     * All CRUD functionalities can be removed since are generalized in BaseService
      * The functionalities implemented here work with a mock data used for visualization
      */
 
@@ -68,7 +68,3 @@ class UserController extends BaseController<UserModel>('users'){
         };
     }
 }
-
-const userController = new UserController();
-
-export default userController;

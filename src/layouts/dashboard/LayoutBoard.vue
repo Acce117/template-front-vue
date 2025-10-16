@@ -22,7 +22,7 @@ const items = ref<MenuItem[]>([
 
 const menuOptions = ref<MenuItem[]>([
     {
-        label: () => i18n.t('dashboard.users.title'),
+        label: () => i18n.t('menu.users'),
         route: '/dashboard/users',
     }
 ]);
@@ -49,3 +49,5 @@ const menuOptions = ref<MenuItem[]>([
         </div>
     </div>
 </template>
+
+<i18n src="./locales.json"></i18n>

@@ -1,24 +1,4 @@
 {
-    "auth": {
-        "user": "Usuario",
-        "password": "Contraseña",
-        "login": {
-            "header": "Iniciar Sesión",
-            "login": "Iniciar Sesión",
-            "error": "Inicio de sesión inválido",
-            "not_account": "¿No tiene una cuenta?",
-            "forgotten_password": "¿Olvidó su contraseña?"
-        },
-        "register": {
-            "header": "Registrarse",
-            "register": "Registrarse",
-            "account": "¿Ya tiene una cuenta?"
-        },
-        "restore_password": {
-            "header": "Restaurar contraseña"
-        }
-    },
-
     "site": {
         "header": "Title"
     },
@@ -41,25 +21,7 @@
         }
     },
 
-    "dashboard": {
-        "delete": "Eliminar",
-        "update": "Actualizar",
-        "users": {
-            "title": "Usuarios",
-            "create": "Nuevo Usuario",
-            "update": "Actualizar usuario",
-            "modal": {
-                "create": "Crear usuario",
-                "update": "Actualizar usuario"
-            }
-        },
-        "dialogs": {
-            "delete": {
-                "message": "¿Desea eliminar este elemento?"
-            }
-        },
-        "actions": "Acciones"
-    },
+   
     "users": {
         "name": "Nombres",
         "lastname": "Apellidos",
@@ -80,16 +42,6 @@
     },
 
     "options": "Opciones",
-
-    "recover-password": {
-        "email": "Ingrese el correo para enviarle el código de recuperación",
-        "recover-code": "Verifique su correo e ingrese el código recibido"
-    },
-    
-    "change-password": {
-        "new-password": "Ingrese una nueva contraseña",
-        "confirm-password": "Confirmar contraseña"
-    },
 
     "nav-options": {
         "dashboard": "Panel de trabajo",

@@ -4,6 +4,10 @@ import Button from 'primevue/button';
 import { Form } from 'vee-validate';
 import { UserModel } from '../../classes/user';
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { locales } from '../../locales/locales';
+
+const { t } = useI18n(locales);
 
 const props = defineProps({
     scenario: {
@@ -34,7 +38,7 @@ const data = ref(props.element || {username: '', password: '', email: ''});
         </div>
 
         <div class="flex flex-justify-end">
-            <Button type="submit">{{ $t(`dashboard.users.modal.${scenario}`) }}</Button>
+            <Button type="submit">{{ t(`dashboard.users.modal.${scenario}`) }}</Button>
         </div>
     </Form>
 </template>

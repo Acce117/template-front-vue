@@ -1,24 +1,4 @@
-{
-    "auth": {
-        "user": "Username",
-        "password": "Password",
-        "login": {
-            "header": "Login",
-            "login": "Log In",
-            "error": "Invalid login",
-            "not_account": "Don't have an account?",
-            "forgotten_password": "Did you forget the password?"
-        },
-        "register": {
-            "header": "Register",
-            "register": "Sign Up",
-            "account": "Already have an account?"
-        },
-        "restore_password": {
-            "header": "Restore password"
-        }
-    },
-    
+{    
     "site": {
         "header": "Title"
     },
@@ -39,26 +19,6 @@
                 "message": "Do you want to log out?"
             }
         }
-    },
-    
-    "dashboard": {
-        "delete": "Delete",
-        "update": "Update",
-        "users": {
-            "title": "Users",
-            "create": "New user",
-            "modal": {
-                "create": "Create user",
-                "update": "Update user"
-            },
-            "update": "Update user"
-        },
-        "dialogs": {
-            "delete": {
-                "message": "Do you want to delete this record?"
-            }
-        },
-        "actions": "Actions"
     },
 
     "users": {
@@ -84,16 +44,6 @@
     },
 
     "options": "Options",
-
-    "recover-password": {
-        "email": "Enter your email to send a recovering code",
-        "recover-code": "Verify your mailbox and enter the recovering code"
-    },
-    
-    "change-password": {
-        "new-password": "Enter a new password",
-        "confirm-password": "Confirm password"
-    },
 
     "nav-options": {
         "dashboard": "Dashboard",

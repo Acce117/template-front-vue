@@ -4,9 +4,9 @@ import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import type { MenuItem } from 'primevue/menuitem';
 import Card from 'primevue/card';
-import NavBar from '@/components/nav-bar/Index.vue';
-import VAvatar from '@/components/nav-bar/VAvatar.vue';
-import VMenu from '@/components/VMenu.vue';
+import NavBar from '@/common/components/nav-bar/Index.vue';
+import VAvatar from '@/common/components/nav-bar/VAvatar.vue';
+import VMenu from '@/common/components/VMenu.vue';
 import { userStore } from '@/common/store/user-store';
 
 const i18n = useI18n();

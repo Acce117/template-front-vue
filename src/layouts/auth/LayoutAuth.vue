@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LanguageSelector from '@/components/LanguageSelector.vue';
+import LanguageSelector from '@/common/components/LanguageSelector.vue';
 import { ref } from 'vue';
 import { RouterView } from 'vue-router';
 

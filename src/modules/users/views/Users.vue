@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { inject, ref, type VNodeRef } from 'vue';
 import Button from 'primevue/button';
-import VTable from '@/components/VTable.vue';
-import VDialog from '@/components/VDialog.vue';
-import DeleteConfirmation from '@/components/confirm-messages/DeleteConfirmation.vue';
+import VTable from '@/common/components/VTable.vue';
+import VDialog from '@/common/components/VDialog.vue';
+import DeleteConfirmation from '@/common/components/confirm-messages/DeleteConfirmation.vue';
 import UserForm from './components/UserForm.vue';
 import { UserModel } from '../classes/user';
 import type { IService } from '@/common/classes/service';

@@ -24,6 +24,6 @@ function toggle(event: any) {
 </script>
 
 <template>
-    <Avatar label="P" size="large" shape="circle" @click="toggle" />
+    <Avatar label="P" size="large" shape="circle" @click="toggle" class="cursor-pointer" />
     <Menu ref="menu" id="overlay_menu" :model :popup="true" />
 </template>

@@ -23,20 +23,20 @@ const scenario = ref('create');
 
 <template>
     <div class="flex flex-justify-between flex-align-center mb-5">
-        <h2>{{ $t('management.users.title') }}</h2>
+        <h2>{{ $t('dashboard.users.title') }}</h2>
     </div>
 
     <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userService!.delete(element.id) }" />
 
     <VTable :model="UserModel.getColumns()" :value="userService!.getElements().response.value"
-        :actions_header="$t('management.actions')">
+        :actions_header="$t('dashboard.actions')">
         <template #header_actions>
             <Button @click="() => {
                 element = null;
                 scenario = 'create';
                 submitCb = userService!.createElement;
                 visible = true
-            }" size="small" class="mr-20">{{ $t('management.users.create') }}</Button>
+            }" size="small" class="mr-20">{{ $t('dashboard.users.create') }}</Button>
         </template>
         <template #actions="{ data }">
             <Button @click="() => {
@@ -44,15 +44,15 @@ const scenario = ref('create');
                 element = data;
                 submitCb = userService!.update;
                 visible = true
-            }" size="small" class="mr-2">{{ $t('management.update').toLowerCase() }}</Button>
+            }" size="small" class="mr-2">{{ $t('dashboard.update').toLowerCase() }}</Button>
             <Button @click="() => {
                 element = data;
                 deleteConfirmation.showConfirm()
-            }" size="small" severity="danger">{{ $t('management.delete').toLowerCase() }}</Button>
+            }" size="small" severity="danger">{{ $t('dashboard.delete').toLowerCase() }}</Button>
         </template>
     </VTable>
 
-    <VDialog v-model:visible="visible" :title="$t(`management.users.${scenario}`)">
+    <VDialog v-model:visible="visible" :title="$t(`dashboard.users.${scenario}`)">
         <UserForm @submit="(data: any) => {
             submitCb(data);
             visible = false

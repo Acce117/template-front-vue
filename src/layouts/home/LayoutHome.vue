@@ -13,7 +13,7 @@ const i18n = useI18n();
 const items = ref<MenuItem[]>([
     {
         label: () => i18n.t('nav-options.dashboard'),
-        command: () => { router.push('/management') }
+        command: () => { router.push('/dashboard') }
     },
     ...userStore().options()
 ]);

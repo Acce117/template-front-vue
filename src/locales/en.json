@@ -41,7 +41,7 @@
         }
     },
     
-    "management": {
+    "dashboard": {
         "delete": "Delete",
         "update": "Update",
         "users": {

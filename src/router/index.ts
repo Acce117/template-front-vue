@@ -1,20 +1,22 @@
 import LayoutAuth from '@/layouts/auth/LayoutAuth.vue';
 import LayoutBoard from '@/layouts/dashboard/LayoutBoard.vue';
 import LayoutHome from '@/layouts/home/LayoutHome.vue';
-import { defineAuthRoutes } from '@/modules/security/routes/routes';
-import { defineUserRoutes } from '@/modules/users/routes/routes';
 import SiteHome from '@/views/SiteHome.vue';
 import { createRouter, createWebHistory } from 'vue-router'
+import './utils';
+import { loadedRoutes, loadRoutes } from './utils';
+
+loadRoutes();
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/home',
       component: LayoutHome,
       children: [
         {
-          path: '/',
+          path: '',
           component: SiteHome,
           name: 'home'
         }
@@ -23,12 +25,12 @@ const router = createRouter({
     {
       path: '/',
       component: LayoutAuth,
-      children: defineAuthRoutes(),
+      children: loadedRoutes['/'],
     },
     {
-      path: '/management',
+      path: '/dashboard',
       component: LayoutBoard,
-      children: defineUserRoutes('/management'),
+      children: loadedRoutes['dashboard'],
     }
   ]
 });

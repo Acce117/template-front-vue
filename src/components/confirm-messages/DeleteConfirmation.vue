@@ -9,8 +9,8 @@ const emit = defineEmits(['accept', 'reject']);
 
 const showConfirm = () => {
     confirm.require({
-        message: i18n.t('management.dialogs.delete.message'),
-        header: i18n.t('management.delete'),
+        message: i18n.t('dashboard.dialogs.delete.message'),
+        header: i18n.t('dashboard.delete'),
         // icon: 'pi pi-info-circle',
         rejectProps: {
             label: i18n.t('actions.cancel'),
@@ -18,7 +18,7 @@ const showConfirm = () => {
             outlined: true
         },
         acceptProps: {
-            label: i18n.t('management.delete'),
+            label: i18n.t('dashboard.delete'),
             severity: 'danger'
         },
         accept: () => emit('accept'),

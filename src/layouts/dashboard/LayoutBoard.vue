@@ -22,8 +22,8 @@ const items = ref<MenuItem[]>([
 
 const menuOptions = ref<MenuItem[]>([
     {
-        label: () => i18n.t('management.users.title'),
-        route: '/management/users',
+        label: () => i18n.t('dashboard.users.title'),
+        route: '/dashboard/users',
     }
 ]);
 </script>

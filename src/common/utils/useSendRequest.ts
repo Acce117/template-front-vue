@@ -5,32 +5,31 @@ import { ref, type Ref } from "vue";
 /**
  * Options object for request
  */
-interface RequestOptions {
+class RequestOptions {
     /**
      * Method of the request
      */
-    method?: 'GET' | 'POST' | 'DELETE' | 'PATCH' | 'PUT',
+    method?: 'GET' | 'POST' | 'DELETE' | 'PATCH' | 'PUT' = 'GET';
+    
     /**
      * Data to be sent in the request
      */
-    data?: Object,
-    /**
-     * Authorization token
-     */
-    auth_token?: string,
+    data?: Object;
+
     /**
      * If the request is made immediately
      * in case of true value, a sendRequest function is returned
      * to be used when the request is going to be sent
      */
-    lazy?: boolean,
+    lazy?: boolean;
+    
     /**
      * Callback to handle response or to do anything once
      * the response is fulfilled
      * @param response reactive response object
      * @param error reactive response error
      */
-    cb?: (response: Ref<any>, error: Ref<AxiosError | null>)=>void
+    cb?: (response: Ref<any>, error: Ref<AxiosError | null>)=>void = () => {};
 }
 
 export interface SendRequestTools {
@@ -72,27 +71,27 @@ export function useSendRequest<I>(
         url: string,
         options: RequestOptions,
     ): SendRequestTools {
-
     let response = ref();
     let loading = ref<boolean>(false);
     let error = ref<AxiosError | null>(null);
 
+    const optionsInstance = new RequestOptions();
+
+    Object.assign(optionsInstance, options);
+    
     function sendRequest() {
         const headers = new AxiosHeaders();
-
-        // if (options.auth_token)
-        //     headers.Authorization = `Bearer ${options.auth_token}`;
         
         const config: AxiosRequestConfig = {
             headers,
-            method: options.method || 'GET',
+            method: optionsInstance.method,
             url,
         }
 
-        if (options.data)
-            !options.method || options.method === 'GET' ?
-                config.params = options.data :
-                config.data = options.data;
+        if (optionsInstance.data)
+            optionsInstance.method === 'GET' ?
+                config.params = optionsInstance.data :
+                config.data = optionsInstance.data;
 
         axiosIns<I>(config)
             .then(res => {
@@ -104,7 +103,7 @@ export function useSendRequest<I>(
             })
             .finally(async () => {
                 loading.value = false;
-                if(options.cb) options.cb(response, error);
+                optionsInstance.cb!(response, error);
             });
         
         loading.value = true;

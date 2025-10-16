@@ -20,14 +20,20 @@ const items = ref<MenuItem[]>([
 </script>
 
 <template>
-    <div class="position-fixed position-top-none w-screen">
+    <header class="position-fixed position-top-none w-screen">
         <NavBar class="m-1">
             <template #avatar>
                 <VAvatar :items="items"></VAvatar>
             </template>
         </NavBar>
-    </div>
-    <div class="h-screen w-screen p-2 pt-20">
+    </header>
+    <main class="w-screen p-2 pt-20">
+        <h1>
+            {{ $t('site.header') }}
+        </h1>
         <RouterView></RouterView>
-    </div>
+    </main>
+    <footer>
+        <p>footer</p>
+    </footer>
 </template>

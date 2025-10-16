@@ -1,7 +1,6 @@
 import LayoutAuth from '@/layouts/auth/LayoutAuth.vue';
 import LayoutBoard from '@/layouts/dashboard/LayoutBoard.vue';
-import LayoutHome from '@/layouts/home/LayoutHome.vue';
-import SiteHome from '@/views/SiteHome.vue';
+import LayoutLanding from '@/layouts/landing/LayoutLanding.vue';
 import { createRouter, createWebHistory } from 'vue-router'
 import './utils';
 import { loadedRoutes, loadRoutes } from './utils';
@@ -13,14 +12,7 @@ const router = createRouter({
   routes: [
     {
       path: '/home',
-      component: LayoutHome,
-      children: [
-        {
-          path: '',
-          component: SiteHome,
-          name: 'home'
-        }
-      ]
+      component: LayoutLanding,
     },
     {
       path: '/',

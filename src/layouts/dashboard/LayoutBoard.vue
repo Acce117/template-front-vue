@@ -15,7 +15,7 @@ const router = useRouter();
 const items = ref<MenuItem[]>([
     {
         label: () => i18n.t('nav-options.home'),
-        command: () => { router.push('/') }
+        command: () => { router.push('/home') }
     },
     ...userStore().options()
 ]);

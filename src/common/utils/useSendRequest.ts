@@ -30,6 +30,8 @@ class RequestOptions {
      * @param error reactive response error
      */
     cb?: (response: Ref<any>, error: Ref<AxiosError | null>)=>void = () => {};
+
+    retry?: { attempts: number, delay: number };
 }
 
 export interface SendRequestTools {
@@ -58,6 +60,10 @@ export interface SendRequestTools {
     sendRequest: CallableFunction
 }
 
+export interface CustomAxiosRequestConfig extends AxiosRequestConfig {
+    retry?: { attempts: number, delay: number }
+}
+
 /**
  * Returns and UseSendRequestResult object to manage a request response
  *
@@ -82,10 +88,11 @@ export function useSendRequest<I>(
     function sendRequest() {
         const headers = new AxiosHeaders();
         
-        const config: AxiosRequestConfig = {
+        const config: CustomAxiosRequestConfig = {
             headers,
             method: optionsInstance.method,
             url,
+            retry: optionsInstance.retry
         }
 
         if (optionsInstance.data)

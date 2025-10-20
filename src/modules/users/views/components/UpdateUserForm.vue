@@ -10,17 +10,14 @@ import { locales } from '../../locales/locales';
 const { t } = useI18n(locales);
 
 const props = defineProps({
-    scenario: {
-        type: String,
-        default: 'create',
-    },
     element: {
-        type: UserModel
+        type: UserModel,
+        required: true
     }
 });
 
-const schema = UserModel.getSchema(props.scenario);
-const data = ref(props.element || {username: '', password: '', email: ''});
+const schema = UserModel.getSchema('update');
+const data = ref(props.element);
 </script>
 
 <template>
@@ -33,12 +30,8 @@ const data = ref(props.element || {username: '', password: '', email: ''});
             <VInput type="email" name="email" label="email" v-model="data.email"></VInput>
         </div>
 
-        <div v-if="scenario === 'create'" class="mb-10">
-            <VInput type="password" name="password" label="password" v-model="data.password"></VInput>
-        </div>
-
         <div class="flex flex-justify-end">
-            <Button type="submit">{{ t(`dashboard.users.modal.${scenario}`) }}</Button>
+            <Button>{{ t(`dashboard.users.modal.update`) }}</Button>
         </div>
     </Form>
 </template>

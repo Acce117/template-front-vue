@@ -4,25 +4,34 @@ import Button from 'primevue/button';
 import VTable from '@/common/components/VTable.vue';
 import VDialog from '@/common/components/VDialog.vue';
 import DeleteConfirmation from '@/common/components/confirm-messages/DeleteConfirmation.vue';
-import UserForm from './components/UserForm.vue';
+import CreateUserForm from './components/CreateUserForm.vue';
 import { UserModel } from '../classes/user';
 import type { IService } from '@/common/classes/service';
 import { useI18n } from 'vue-i18n';
 import { locales } from '../locales/locales';
+import UpdateUserForm from './components/UpdateUserForm.vue';
 
 const { t } = useI18n(locales);
 
-const userService: IService<UserModel> | undefined  = inject('USER_SERVICE');
+const userService: IService<UserModel> = inject('USER_SERVICE')!;
 
-const visible = ref(false);
+const createUserModal = ref(false);
+
+const updateUserModal = ref(false);
 
 const deleteConfirmation = ref<VNodeRef | undefined>(undefined);
 
 const element = ref<any>(undefined);
 
-const submitCb = ref<(...args: any[]) => any>(() => { });
+function handleCreateSubmit(data: any) {
+    userService.createElement(data);
+    createUserModal.value = false;
+}
 
-const scenario = ref('create');
+function handleUpdateSubmit(data: any) {
+    userService.update(element.value.id, data);
+    updateUserModal.value = false;
+}
 </script>
 
 <template>
@@ -30,25 +39,20 @@ const scenario = ref('create');
         <h2>{{ t('dashboard.users.title') }}</h2>
     </div>
 
-    <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userService!.delete(element.id) }" />
-
     <VTable :model="UserModel.getColumns()" :value="userService!.getElements().response.value"
         :actions_header="t('dashboard.actions')">
         <template #header_actions>
             <Button @click="() => {
                 element = null;
-                scenario = 'create';
-                submitCb = userService!.createElement;
-                visible = true
+                createUserModal = true
             }" size="small" class="mr-20">{{ t('dashboard.users.create') }}</Button>
         </template>
         <template #actions="{ data }">
             <Button @click="() => {
-                scenario = 'update';
                 element = data;
-                submitCb = userService!.update;
-                visible = true
+                updateUserModal = true
             }" size="small" class="mr-2">{{ t('dashboard.update').toLowerCase() }}</Button>
+
             <Button @click="() => {
                 element = data;
                 deleteConfirmation.showConfirm()
@@ -56,10 +60,13 @@ const scenario = ref('create');
         </template>
     </VTable>
 
-    <VDialog v-model:visible="visible" :title="t(`dashboard.users.${scenario}`)">
-        <UserForm @submit="(data: any) => {
-            submitCb(data);
-            visible = false
-        }" :scenario :element></UserForm>
+    <DeleteConfirmation ref="deleteConfirmation" @accept="() => { if (element) userService!.delete(element.id) }" />
+
+    <VDialog v-model:visible="createUserModal" :title="t(`dashboard.users.create`)">
+        <CreateUserForm @submit="handleCreateSubmit"></CreateUserForm>
+    </VDialog>
+
+    <VDialog v-model:visible="updateUserModal" :title="t(`dashboard.users.update`)">
+        <UpdateUserForm @submit="handleUpdateSubmit" :element></UpdateUserForm>
     </VDialog>
 </template>

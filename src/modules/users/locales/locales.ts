@@ -7,18 +7,12 @@ export const locales = {
                 "users": {
                     "title": "Users",
                     "create": "New user",
+                    "update": "Update user",
                     "modal": {
                         "create": "Create user",
                         "update": "Update user"
                     },
-                    "update": "Update user"
                 },
-                "dialogs": {
-                    "delete": {
-                        "message": "Do you want to delete this record?"
-                    }
-                },
-                "actions": "Actions"
             },
         },
         es: {
@@ -34,12 +28,6 @@ export const locales = {
                         "update": "Actualizar usuario"
                     }
                 },
-                "dialogs": {
-                    "delete": {
-                        "message": "¿Desea eliminar este elemento?"
-                    }
-                },
-                "actions": "Acciones"
             },
         }
     }

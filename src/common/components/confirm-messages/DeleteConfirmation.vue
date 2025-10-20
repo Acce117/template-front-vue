@@ -34,3 +34,28 @@ defineExpose({
 <template>
     <ConfirmDialog></ConfirmDialog>
 </template>
+
+<i18n>
+{
+  "en": {
+    "dashboard": {
+        "delete": "Delete",
+        "dialogs": {
+            "delete": {
+                "message": "Are you sure you want to delete this item? This action cannot be undone."
+            }
+      }
+    }
+  },
+  "es": {
+    "dashboard": {
+        "delete": "Eliminar",
+        "dialogs": {
+            "delete": {
+                "message": "¿Está seguro de que quiere eliminar este elemento? Esta acción no se puede deshacer."
+            }
+        },
+    }
+  }
+}
+</i18n>

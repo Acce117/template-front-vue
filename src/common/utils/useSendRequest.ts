@@ -1,4 +1,4 @@
-import axiosIns from "@/plugins/axios";
+import axiosIns from "@/plugins/axios/axios";
 import { AxiosError, AxiosHeaders, type AxiosRequestConfig } from "axios";
 import { ref, type Ref } from "vue";
 
@@ -105,9 +105,7 @@ export function useSendRequest<I>(
                 response.value = res.data
                 error.value = null
             })
-            .catch(err => {
-                error.value = err
-            })
+            .catch(err => error.value = err)
             .finally(async () => {
                 loading.value = false;
                 optionsInstance.cb!(response, error);

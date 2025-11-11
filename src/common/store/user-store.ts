@@ -13,7 +13,8 @@ export interface UserInterface {
 
 export const userStore = defineStore('user', {
     state: (): UserInterface => {
-
+        const auth = localStorage.getItem('auth');
+        
         const state: UserInterface = {
             id: null,
             name: null,

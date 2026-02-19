@@ -27,6 +27,6 @@ export class LoginContext {
     }
 
     getUrl() {
-        return 'login';
+        return 'auth/login';
     }
 }

@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import Button from 'primevue/button';
-import { Form } from 'vee-validate';
 import VInput from '@/common/components/VInput.vue';
-import { AuthController } from '../controllers/authController';
 import { UserModel } from '@/modules/users/classes/user';
-import Divider from 'primevue/divider';
+import { Form } from 'vee-validate';
 import { useI18n } from 'vue-i18n';
+import { AuthController } from '../controllers/authController';
 import { locales } from '../locales/locales';
 
 const { t } = useI18n(locales);

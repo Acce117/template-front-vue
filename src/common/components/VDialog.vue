@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Dialog from 'primevue/dialog';
 const props = defineProps({
    title: {
     type: String

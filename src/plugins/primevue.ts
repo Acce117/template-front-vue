@@ -1,12 +1,10 @@
-import Aura from '@primevue/themes/lara';
-//import Nora from '@primevue/themes/nora';
-//import Lara from '@primevue/themes/lara';
+import Aura from '@primeuix/themes/aura';
 
 export const primevueConfig = {
     theme: {
         preset: Aura,
         options: {
-            darkModeSelector: '.app-dark'
+            darkModeSelector: '.app-dark',
         }
-    }
+    },
 };

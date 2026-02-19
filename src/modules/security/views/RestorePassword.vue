@@ -1,12 +1,5 @@
 <script setup lang="ts">
 import { Form } from 'vee-validate';
-import Button from 'primevue/button';
-import InputOtp from 'primevue/inputotp';
-import Step from 'primevue/step';
-import StepList from 'primevue/steplist';
-import StepPanel from 'primevue/steppanel';
-import StepPanels from 'primevue/steppanels';
-import Stepper from 'primevue/stepper';
 import VInput from '@/common/components/VInput.vue';
 import { useI18n } from 'vue-i18n';
 import { locales } from '../locales/locales';

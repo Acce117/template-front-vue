@@ -2,12 +2,19 @@ import GlobalEventManager from "@/common/utils/globalEventManager";
 import type { CustomAxiosRequestConfig } from "@/common/utils/useSendRequest";
 import type { AxiosError, AxiosInstance } from "axios";
 
+const notRetryErrorCodes = [
+    400,
+    403,
+    404,
+]
+
 export function errorInterceptor(axiosIns: AxiosInstance) {
     return (error: AxiosError) => {
         const config: CustomAxiosRequestConfig = error.config || {};
 
         let result = null;
-        if (!config.retry || !config.retry.attempts) {
+
+        if (!config.retry || !config.retry.attempts || notRetryErrorCodes.includes(error.status!)) {
             result = Promise.reject(error);
 
             GlobalEventManager.dispatch('show-toast', {

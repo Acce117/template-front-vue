@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
-import { useRouter } from 'vue-router';
-import Avatar from 'primevue/avatar';
-import Menu from 'primevue/menu';
+import { ref } from 'vue';
 import type { MenuItem } from 'primevue/menuitem';
 import { useI18n } from 'vue-i18n';
 

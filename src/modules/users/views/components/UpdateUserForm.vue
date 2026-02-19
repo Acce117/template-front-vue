@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import VInput from '@/common/components/VInput.vue';
-import Button from 'primevue/button';
 import { Form } from 'vee-validate';
-import { UserModel } from '../../classes/user';
 import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { UserModel } from '../../classes/user';
 import { locales } from '../../locales/locales';
 
 const { t } = useI18n(locales);

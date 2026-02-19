@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import ConfirmDialog from "primevue/confirmdialog";
 import { useConfirm } from "primevue/useconfirm";
 import { useI18n } from "vue-i18n";
 

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import Menu from 'primevue/menu';
-
 const props = defineProps({
     title: {
         type: String,

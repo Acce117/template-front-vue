@@ -23,6 +23,6 @@ export class SignInContext {
     }
 
     getUrl() {
-        return 'sign_in';
+        return 'auth/sign_in';
     }
 }

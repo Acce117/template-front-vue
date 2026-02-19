@@ -1,14 +1,13 @@
 <script setup lang="ts">
-import { inject, ref, type VNodeRef } from 'vue';
-import Button from 'primevue/button';
-import VTable from '@/common/components/VTable.vue';
-import VDialog from '@/common/components/VDialog.vue';
-import DeleteConfirmation from '@/common/components/confirm-messages/DeleteConfirmation.vue';
-import CreateUserForm from './components/CreateUserForm.vue';
-import { UserModel } from '../classes/user';
 import type { IService } from '@/common/classes/service';
+import VDialog from '@/common/components/VDialog.vue';
+import VTable from '@/common/components/VTable.vue';
+import DeleteConfirmation from '@/common/components/confirm-messages/DeleteConfirmation.vue';
+import { inject, ref, type VNodeRef } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { UserModel } from '../classes/user';
 import { locales } from '../locales/locales';
+import CreateUserForm from './components/CreateUserForm.vue';
 import UpdateUserForm from './components/UpdateUserForm.vue';
 
 const { t } = useI18n(locales);

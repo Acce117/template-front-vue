@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import { RouterView, useRouter } from 'vue-router';
-import type { MenuItem } from 'primevue/menuitem';
 import NavBar from '@/common/components/nav-bar/Index.vue';
 import VAvatar from '@/common/components/nav-bar/VAvatar.vue';
-import { useI18n } from 'vue-i18n';
 import { userStore } from '@/common/store/user-store';
+import type { MenuItem } from 'primevue/menuitem';
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { RouterView, useRouter } from 'vue-router';
 
 const router = useRouter();
 const i18n = useI18n();

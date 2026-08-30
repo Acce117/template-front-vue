@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useToast } from 'primevue/usetoast';
-import GlobalEventManager from './common/utils/globalEventManager';
+import GlobalEventManager from './common/utils/GlobalEventManager';
 
 const toast = useToast();
 

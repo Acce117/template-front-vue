@@ -1,4 +1,4 @@
-import GlobalEventManager from "@/common/utils/globalEventManager";
+import GlobalEventManager from "@/common/utils/GlobalEventManager";
 import type { CustomAxiosRequestConfig } from "@/common/utils/useSendRequest";
 import type { AxiosError, AxiosInstance } from "axios";
 
